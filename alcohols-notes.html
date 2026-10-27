@@ -1,1039 +1,1048 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alcohols, Phenols & Ethers - Complete Master Notes (Boards + JEE)</title>
+    <title>JEE Master Vault: Alcohols, Phenols & Ethers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate950: '#0b1120',
+                        slate900: '#0f172a',
+                        slate800: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #0f766e;
-            --accent: #b45309;
-            --danger: #991b1b;
-            --bg-light: #f8fafc;
-            --border: #cbd5e1;
-        }
-        * { box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.65;
-            color: #1e293b;
-            max-width: 1050px;
-            margin: 0 auto;
-            padding: 30px;
-            background-color: #ffffff;
+            background-color: #0b1120;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.14) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.10) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(245, 158, 11, 0.08) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: #e2e8f0;
         }
-        header {
-            text-align: center;
-            border-bottom: 4px solid var(--primary);
-            padding-bottom: 20px;
-            margin-bottom: 35px;
-            background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 100%);
-            padding: 25px;
-            border-radius: 10px;
+
+        /* Custom Glassmorphism */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
-        h1 {
-            color: var(--primary);
-            margin: 0 0 10px 0;
-            font-size: 2.2rem;
-            letter-spacing: -0.5px;
+
+        .glass-nav {
+            background: rgba(11, 17, 32, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .subtitle {
-            font-size: 1.1rem;
-            color: #475569;
-            font-weight: 600;
-        }
-        h2 {
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 16px;
+
+        /* Active Recall Blur Mechanism */
+        .recall-active .recall-target {
+            filter: blur(8px);
+            user-select: none;
+            cursor: pointer;
+            transition: filter 0.25s ease, background-color 0.25s ease;
+            background: rgba(99, 102, 241, 0.08);
             border-radius: 6px;
-            margin-top: 40px;
-            font-size: 1.4rem;
-            page-break-after: avoid;
         }
-        h3 {
-            color: var(--secondary);
-            border-bottom: 2px solid #ccfbf1;
-            padding-bottom: 6px;
-            margin-top: 28px;
-            font-size: 1.2rem;
-            page-break-after: avoid;
+        .recall-active .recall-target:hover,
+        .recall-active .recall-target.revealed {
+            filter: blur(0px);
+            user-select: auto;
+            background: transparent;
         }
-        h4 {
-            color: var(--accent);
-            margin-bottom: 8px;
-            margin-top: 18px;
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 18px 0;
-            font-size: 0.95rem;
-            page-break-inside: avoid;
+        ::-webkit-scrollbar-track {
+            background: #0b1120;
         }
-        th, td {
-            border: 1px solid var(--border);
-            padding: 10px 12px;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background-color: #f1f5f9;
-            color: var(--primary);
-            font-weight: 700;
-        }
-        tr:nth-child(even) { background-color: #f8fafc; }
-        .box {
-            border-left: 5px solid var(--primary);
-            background-color: var(--bg-light);
-            padding: 14px 18px;
-            margin: 18px 0;
-            border-radius: 0 8px 8px 0;
-            page-break-inside: avoid;
-        }
-        .jee-trap {
-            border-left-color: var(--danger);
-            background-color: #fef2f2;
-        }
-        .jee-trap .box-title { color: var(--danger); }
-        .board-must {
-            border-left-color: var(--secondary);
-            background-color: #f0fdfa;
-        }
-        .board-must .box-title { color: var(--secondary); }
-        .mech-box {
-            border: 2px dashed #64748b;
-            background-color: #fffbeb;
-            padding: 16px;
-            margin: 18px 0;
-            border-radius: 8px;
-            page-break-inside: avoid;
-        }
-        .box-title {
-            font-weight: 700;
-            font-size: 1.05rem;
-            margin-bottom: 6px;
-            display: block;
-            color: var(--primary);
-        }
-        .rxn {
-            font-family: 'Cambria Math', 'Courier New', monospace;
-            background-color: #f1f5f9;
-            padding: 10px 14px;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-            margin: 10px 0;
-            font-weight: 600;
-            color: #0f172a;
-            overflow-x: auto;
-        }
-        ul, ol { margin-top: 6px; padding-left: 22px; }
-        li { margin-bottom: 6px; }
-        .badge {
-            display: inline-block;
-            padding: 2px 8px;
-            font-size: 0.78rem;
-            font-weight: 700;
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
             border-radius: 4px;
-            margin-right: 6px;
-            text-transform: uppercase;
+            border: 1px solid rgba(99, 102, 241, 0.3);
         }
-        .badge-jee { background-color: #fee2e2; color: #991b1b; }
-        .badge-board { background-color: #dcfce7; color: #166534; }
-        @media print {
-            body { padding: 0; font-size: 11pt; }
-            h2 { background-color: #1e3a8a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .box, .mech-box, table { page-break-inside: avoid; }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+
+        /* Neon Badges */
+        .badge-indigo {
+            background: rgba(99, 102, 241, 0.15);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.35);
+        }
+        .badge-emerald {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.35);
+        }
+        .badge-amber {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.35);
+        }
+        .badge-rose {
+            background: rgba(244, 63, 94, 0.15);
+            color: #fb7185;
+            border: 1px solid rgba(244, 63, 94, 0.35);
+        }
+
+        .chem-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #a5b4fc;
+            background: rgba(30, 41, 59, 0.7);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
         }
     </style>
 </head>
-<body>
+<body class="min-h-screen antialiased selection:bg-indigo-500 selection:text-white">
 
-<header>
-    <h1>CHAPTER: ALCOHOLS, PHENOLS AND ETHERS</h1>
-    <div class="subtitle">Complete Master Study Guide | Class 12 CBSE Boards + JEE Main &amp; Advanced</div>
-    <p style="margin-top:8px; font-size:0.9rem; color:#64748b;">Tip: Press <b>Ctrl + P</b> (or Cmd + P) in your browser and select <b>"Save as PDF"</b> to create a printable PDF book.</p>
-</header>
+    <!-- Top Sticky Glassmorphic Navigation -->
+    <header class="glass-nav sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-emerald-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 font-mono font-bold text-white text-lg">
+                    OH
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                        Alcohols, Phenols & Ethers
+                        <span class="text-xs px-2.5 py-0.5 rounded-full badge-indigo font-mono">JEE ADV + MAIN PYQ VAULT</span>
+                    </h1>
+                    <p class="text-xs text-slate-400">Complete Reagent, Stereochemistry & Reaction Trap Master Sheet</p>
+                </div>
+            </div>
 
-<!-- ===================================================================== -->
-<!-- SECTION 1 -->
-<!-- ===================================================================== -->
-<h2>SECTION 1: Classification, Structure &amp; Nomenclature</h2>
+            <!-- Section Jump Links -->
+            <nav class="hidden xl:flex items-center space-x-1 text-xs font-medium bg-slate-900/90 p-1.5 rounded-xl border border-slate-800">
+                <a href="#part1-prep" class="px-3 py-1.5 rounded-lg hover:bg-indigo-500/20 hover:text-indigo-300 transition">1. Alcohol Prep</a>
+                <a href="#part1-rxn" class="px-3 py-1.5 rounded-lg hover:bg-indigo-500/20 hover:text-indigo-300 transition">2. Alcohol Rxns</a>
+                <a href="#part2-phenols" class="px-3 py-1.5 rounded-lg hover:bg-emerald-500/20 hover:text-emerald-300 transition">3. Phenols Hub</a>
+                <a href="#part3-ethers" class="px-3 py-1.5 rounded-lg hover:bg-amber-500/20 hover:text-amber-300 transition">4. Ethers & Epoxides</a>
+                <a href="#part4-tests" class="px-3 py-1.5 rounded-lg hover:bg-rose-500/20 hover:text-rose-300 transition">5. Acidity & Tests</a>
+                <a href="#interactive-hub" class="px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-600/50 transition">⚡ Pathway Explorer</a>
+            </nav>
 
-<h3>1.1 Detailed Classification</h3>
-<ul>
-    <li><b>Monohydric, Dihydric, Trihydric:</b>
-        <ul>
-            <li><b>Monohydric:</b> 1 &ndash;OH group (e.g., CH<sub>3</sub>CH<sub>2</sub>OH).</li>
-            <li><b>Dihydric (Glycols):</b> 2 &ndash;OH groups on different carbons (e.g., Ethane-1,2-diol / Ethylene Glycol: HO&ndash;CH<sub>2</sub>&ndash;CH<sub>2</sub>&ndash;OH).</li>
-            <li><b>Trihydric:</b> 3 &ndash;OH groups (e.g., Propane-1,2,3-triol / Glycerol: HOCH<sub>2</sub>&ndash;CH(OH)&ndash;CH<sub>2</sub>OH).</li>
-        </ul>
-    </li>
-    <li><b>Classification by Hybridization of C attached to &ndash;OH:</b>
-        <ul>
-            <li><b>sp<sup>3</sup> C&ndash;OH:</b>
-                <ul>
-                    <li><b>Alkyl Alcohols (1&deg;, 2&deg;, 3&deg;):</b> Depend on whether the &alpha;-carbon (bearing &ndash;OH) is attached to 1, 2, or 3 carbon atoms.</li>
-                    <li><b>Allylic Alcohols:</b> &ndash;OH is attached to an sp<sup>3</sup> carbon immediately adjacent to a C=C double bond (e.g., CH<sub>2</sub>=CH&ndash;CH<sub>2</sub>OH, Prop-2-en-1-ol).</li>
-                    <li><b>Benzylic Alcohols:</b> &ndash;OH is attached to an sp<sup>3</sup> carbon directly bonded to an aromatic ring (e.g., C<sub>6</sub>H<sub>5</sub>&ndash;CH<sub>2</sub>OH, Phenylmethanol).</li>
-                </ul>
-            </li>
-            <li><b>sp<sup>2</sup> C&ndash;OH:</b>
-                <ul>
-                    <li><b>Vinylic Alcohols (Enols):</b> &ndash;OH is directly bonded to a carbon-carbon double bond (CH<sub>2</sub>=CH&ndash;OH). <i>Unstable; rapidly tautomerizes to aldehydes/ketones (CH<sub>3</sub>&ndash;CHO).</i></li>
-                    <li><b>Phenols:</b> &ndash;OH is attached directly to an sp<sup>2</sup> hybridized carbon of a benzene ring.</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li><b>Ethers (R&ndash;O&ndash;R'):</b>
-        <ul>
-            <li><b>Simple / Symmetrical:</b> Both alkyl or aryl groups attached to oxygen are identical (e.g., C<sub>2</sub>H<sub>5</sub>&ndash;O&ndash;C<sub>2</sub>H<sub>5</sub>).</li>
-            <li><b>Mixed / Unsymmetrical:</b> The two groups differ (e.g., CH<sub>3</sub>&ndash;O&ndash;C<sub>2</sub>H<sub>5</sub> or C<sub>6</sub>H<sub>5</sub>&ndash;O&ndash;CH<sub>3</sub>).</li>
-        </ul>
-    </li>
-</ul>
-
-<div class="box jee-trap">
-    <span class="box-title"><span class="badge badge-jee">JEE Trap</span>Geminal Diols (1,1-Diols) &amp; Rare Stable Hydrates</span>
-    Two &ndash;OH groups on the <b>same carbon</b> [R&ndash;CH(OH)<sub>2</sub>] experience intense electronic repulsion and spontaneously eliminate H<sub>2</sub>O to form C=O. <br>
-    <b>3 Famous Exceptions (Stable Gem-Diols asked in JEE):</b>
-    <ol>
-        <li><b>Chloral Hydrate [CCl<sub>3</sub>&ndash;CH(OH)<sub>2</sub>]:</b> Strong &ndash;I effect of three &ndash;Cl atoms destabilizes the positive carbonyl carbon, and intramolecular H-bonding between &ndash;Cl and &ndash;OH locks the diol.</li>
-        <li><b>Ninhydrin:</b> Central carbon is flanked by two electron-withdrawing C=O groups, making the unhydrated tri-ketone electronically unstable due to severe dipole-dipole repulsion.</li>
-        <li><b>Cyclopropanone Hydrate:</b> Converts sp<sup>2</sup> carbon (ideal 120&deg; forced into 60&deg;) to sp<sup>3</sup> carbon (ideal 109.5&deg;), relieving massive Baeyer angle strain.</li>
-    </ol>
-</div>
-
-<h3>1.2 Bond Angles &amp; Bond Lengths Comparison (Board 1-2 Mark Guarantee)</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Molecule</th>
-            <th>O-Hybridization</th>
-            <th>Bond Angle</th>
-            <th>C&ndash;O Bond Length</th>
-            <th>Exact Structural Reasoning</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><b>Methanol</b> (CH<sub>3</sub>OH)</td>
-            <td>sp<sup>3</sup></td>
-            <td><b>108.9&deg;</b><br>(Less than 109.5&deg;)</td>
-            <td>142 pm</td>
-            <td>Lone pair&ndash;lone pair repulsion on the oxygen atom compresses the C&ndash;O&ndash;H bond angle slightly below the ideal tetrahedral angle (109&deg;28').</td>
-        </tr>
-        <tr>
-            <td><b>Phenol</b> (C<sub>6</sub>H<sub>5</sub>OH)</td>
-            <td>sp<sup>3</sup> (partial sp<sup>2</sup>)</td>
-            <td><b>109&deg;</b></td>
-            <td><b>136 pm</b><br>(Shortest!)</td>
-            <td>1. <b>Resonance:</b> Oxygen's lone pair delocalizes into the benzene ring, giving the C&ndash;O bond partial double-bond character.<br>2. <b>Hybridization:</b> Aromatic carbon is sp<sup>2</sup> (33.3% s-character vs 25% in sp<sup>3</sup>), pulling electrons closer.</td>
-        </tr>
-        <tr>
-            <td><b>Methoxymethane</b> (CH<sub>3</sub>OCH<sub>3</sub>)</td>
-            <td>sp<sup>3</sup></td>
-            <td><b>111.7&deg;</b><br>(Greater than 109.5&deg;)</td>
-            <td>141 pm</td>
-            <td>Strong <b>steric repulsion (hindrance)</b> between the two bulky methyl (&ndash;CH<sub>3</sub>) groups forces the C&ndash;O&ndash;C angle to widen beyond 109.5&deg;.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h3>1.3 High-Yield Common &amp; IUPAC Names Table</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Structure</th>
-            <th>Common Name</th>
-            <th>IUPAC Name</th>
-            <th>Key Exam Property</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CH<sub>3</sub>&ndash;CH(OH)&ndash;CH<sub>3</sub></td>
-            <td>Isopropyl alcohol</td>
-            <td>Propan-2-ol</td>
-            <td>Smallest 2&deg; alcohol; positive Iodoform test</td>
-        </tr>
-        <tr>
-            <td>CH<sub>3</sub>&ndash;CH<sub>2</sub>&ndash;CH(OH)&ndash;CH<sub>3</sub></td>
-            <td><i>sec</i>-Butyl alcohol</td>
-            <td>Butan-2-ol</td>
-            <td>Chiral alcohol (optically active; has a stereocenter)</td>
-        </tr>
-        <tr>
-            <td>(CH<sub>3</sub>)<sub>3</sub>C&ndash;OH</td>
-            <td><i>tert</i>-Butyl alcohol</td>
-            <td>2-Methylpropan-2-ol</td>
-            <td>3&deg; alcohol; immediate turbidity with Lucas reagent</td>
-        </tr>
-        <tr>
-            <td>(CH<sub>3</sub>)<sub>3</sub>C&ndash;CH<sub>2</sub>OH</td>
-            <td>Neopentyl alcohol</td>
-            <td>2,2-Dimethylpropan-1-ol</td>
-            <td>1&deg; alcohol that undergoes carbocation rearrangement (methyl shift) in acidic dehydration!</td>
-        </tr>
-        <tr>
-            <td><i>o</i>-C<sub>6</sub>H<sub>4</sub>(OH)<sub>2</sub></td>
-            <td><b>Catechol</b></td>
-            <td>Benzene-1,2-diol</td>
-            <td><i>Ortho</i>-dihydroxybenzene</td>
-        </tr>
-        <tr>
-            <td><i>m</i>-C<sub>6</sub>H<sub>4</sub>(OH)<sub>2</sub></td>
-            <td><b>Resorcinol</b></td>
-            <td>Benzene-1,3-diol</td>
-            <td><i>Meta</i>-dihydroxybenzene</td>
-        </tr>
-        <tr>
-            <td><i>p</i>-C<sub>6</sub>H<sub>4</sub>(OH)<sub>2</sub></td>
-            <td><b>Hydroquinone (Quinol)</b></td>
-            <td>Benzene-1,4-diol</td>
-            <td><i>Para</i>-dihydroxybenzene; oxidizes to Benzoquinone</td>
-        </tr>
-        <tr>
-            <td><i>o/m/p</i>-CH<sub>3</sub>&ndash;C<sub>6</sub>H<sub>4</sub>&ndash;OH</td>
-            <td><b>Cresols</b> (<i>o, m, p</i>)</td>
-            <td>2-, 3-, or 4-Methylphenol</td>
-            <td>Component of Lysol; less acidic than phenol</td>
-        </tr>
-        <tr>
-            <td>C<sub>6</sub>H<sub>5</sub>&ndash;O&ndash;CH<sub>3</sub></td>
-            <td><b>Anisole</b></td>
-            <td>Methoxybenzene</td>
-            <td>Alkyl aryl ether; gives Phenol + CH<sub>3</sub>I with HI</td>
-        </tr>
-        <tr>
-            <td>C<sub>6</sub>H<sub>5</sub>&ndash;O&ndash;CH<sub>2</sub>CH<sub>3</sub></td>
-            <td><b>Phenetole</b></td>
-            <td>Ethoxybenzene</td>
-            <td>Gives Phenol + C<sub>2</sub>H<sub>5</sub>I on heating with HI</td>
-        </tr>
-    </tbody>
-</table>
-
-<!-- ===================================================================== -->
-<!-- SECTION 2 -->
-<!-- ===================================================================== -->
-<h2>SECTION 2: Methods of Preparation (MOP)</h2>
-
-<h3>2.1 Preparation of Alcohols from Alkenes (The Big Three Comparison)</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Feature</th>
-            <th>1. Acid-Catalyzed Hydration</th>
-            <th>2. Oxymercuration-Demercuration (OMDM)</th>
-            <th>3. Hydroboration-Oxidation (HBO)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><b>Reagents</b></td>
-            <td>Dilute H<sub>2</sub>SO<sub>4</sub> or H<sub>3</sub>O<sup>+</sup> (H<sub>2</sub>O / H<sup>+</sup>)</td>
-            <td><b>Step 1:</b> Hg(OAc)<sub>2</sub>, THF&ndash;H<sub>2</sub>O<br><b>Step 2:</b> NaBH<sub>4</sub>, OH<sup>&minus;</sup></td>
-            <td><b>Step 1:</b> BH<sub>3</sub>&middot;THF (or B<sub>2</sub>H<sub>6</sub>)<br><b>Step 2:</b> H<sub>2</sub>O<sub>2</sub>, aq. NaOH</td>
-        </tr>
-        <tr>
-            <td><b>Regiochemistry</b></td>
-            <td><b>Markovnikov</b> addition</td>
-            <td><b>Markovnikov</b> addition</td>
-            <td><b>Anti-Markovnikov</b> addition</td>
-        </tr>
-        <tr>
-            <td><b>Intermediate</b></td>
-            <td>Classical <b>Carbocation</b></td>
-            <td>Cyclic <b>Mercurinium Ion</b> (3-membered bridged ring)</td>
-            <td>4-centered cyclic transition state &rarr; Trialkylborane (R<sub>3</sub>B)</td>
-        </tr>
-        <tr>
-            <td><b>Carbocation Rearrangement?</b></td>
-            <td><b>YES!</b> (1,2-Hydride, 1,2-Methyl, or Ring Expansion occurs)</td>
-            <td><b>NO!</b> (Bridged ion prevents rearrangement)</td>
-            <td><b>NO!</b> (Concerted addition)</td>
-        </tr>
-        <tr>
-            <td><b>Stereochemistry</b></td>
-            <td>Non-stereospecific (Racemization possible)</td>
-            <td><b>Anti-addition</b> (in Step 1), mixed in Step 2</td>
-            <td><b>100% Syn-addition</b> (&ndash;H and &ndash;OH add to the <i>same face</i> of the double bond)</td>
-        </tr>
-        <tr>
-            <td><b>Source of H and OH</b> (Isotopic Tracer JEE Q)</td>
-            <td>Both H and OH come from H<sub>2</sub>O</td>
-            <td><b>&ndash;OH</b> comes from H<sub>2</sub>O<br><b>&ndash;H</b> comes from NaBH<sub>4</sub></td>
-            <td><b>&ndash;H</b> (on more substituted C) comes from BH<sub>3</sub><br><b>&ndash;OH</b> (on less substituted C) comes from H<sub>2</sub>O<sub>2</sub></td>
-        </tr>
-    </tbody>
-</table>
-
-<div class="mech-box">
-    <span class="box-title"><span class="badge badge-board">Mandatory NCERT Mechanism #1</span>Acid-Catalyzed Hydration of Alkenes to Alcohols</span>
-    <b>Equation:</b> CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O &xrightarrow{H<sup>+</sup>} CH<sub>3</sub>&ndash;CH<sub>2</sub>&ndash;OH<br>
-    <ul>
-        <li><b>Step 1: Protonation of alkene to form carbocation by electrophilic attack of H<sub>3</sub>O<sup>+</sup> (Slow, Rate-Determining Step):</b><br>
-            CH<sub>2</sub>=CH<sub>2</sub> + H<sub>3</sub>O<sup>+</sup> &rarr; CH<sub>3</sub>&ndash;CH<sub>2</sub><sup>+</sup> + H<sub>2</sub>O
-        </li>
-        <li><b>Step 2: Nucleophilic attack of water on the carbocation:</b><br>
-            CH<sub>3</sub>&ndash;CH<sub>2</sub><sup>+</sup> + :OH<sub>2</sub> &rarr; CH<sub>3</sub>&ndash;CH<sub>2</sub>&ndash;O<sup>+</sup>H<sub>2</sub> (Protonated alcohol)
-        </li>
-        <li><b>Step 3: Deprotonation to form an alcohol (regenerates H<sup>+</sup> catalyst):</b><br>
-            CH<sub>3</sub>&ndash;CH<sub>2</sub>&ndash;O<sup>+</sup>H<sub>2</sub> + H<sub>2</sub>O &rarr; CH<sub>3</sub>&ndash;CH<sub>2</sub>&ndash;OH + H<sub>3</sub>O<sup>+</sup>
-        </li>
-    </ul>
-</div>
-
-<div class="box jee-trap">
-    <span class="box-title"><span class="badge badge-jee">JEE PYQ Classic</span>3,3-Dimethylbut-1-ene Hydration Comparison</span>
-    Reactant: <b>(CH<sub>3</sub>)<sub>3</sub>C&ndash;CH=CH<sub>2</sub></b>
-    <ul>
-        <li>With <b>H<sub>3</sub>O<sup>+</sup></b>: Forms 2&deg; carbocation (CH<sub>3</sub>)<sub>3</sub>C&ndash;C<sup>+</sup>H&ndash;CH<sub>3</sub> &rarr; undergoes <b>1,2-methyl shift</b> to give more stable 3&deg; carbocation &rarr; Major Product: <b>2,3-Dimethylbutan-2-ol</b>.</li>
-        <li>With <b>OMDM [Hg(OAc)<sub>2</sub>/H<sub>2</sub>O; NaBH<sub>4</sub>]</b>: Markovnikov without rearrangement &rarr; Major Product: <b>3,3-Dimethylbutan-2-ol</b>.</li>
-        <li>With <b>HBO [BH<sub>3</sub>&middot;THF; H<sub>2</sub>O<sub>2</sub>/OH<sup>&minus;</sup>]</b>: Anti-Markovnikov without rearrangement &rarr; Major Product: <b>3,3-Dimethylbutan-1-ol</b>.</li>
-    </ul>
-</div>
-
-<h3>2.2 Preparation of Alcohols from Carbonyl Compounds</h3>
-
-<h4>A. Reduction of Aldehydes, Ketones, Carboxylic Acids &amp; Esters</h4>
-<table>
-    <thead>
-        <tr>
-            <th>Reducing Agent</th>
-            <th>Aldehyde (RCHO)</th>
-            <th>Ketone (RCOR')</th>
-            <th>Carboxylic Acid (RCOOH)</th>
-            <th>Ester (RCOOR')</th>
-            <th>C=C Double Bond</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><b>NaBH<sub>4</sub></b> / EtOH (Mild)</td>
-            <td>1&deg; Alcohol (RCH<sub>2</sub>OH)</td>
-            <td>2&deg; Alcohol (RCH(OH)R')</td>
-            <td><b>No Reaction</b></td>
-            <td><b>No Reaction</b></td>
-            <td><b>No Reaction</b></td>
-        </tr>
-        <tr>
-            <td><b>LiAlH<sub>4</sub></b> / THF, then H<sub>3</sub>O<sup>+</sup> (Strong)</td>
-            <td>1&deg; Alcohol</td>
-            <td>2&deg; Alcohol</td>
-            <td>1&deg; Alcohol (RCH<sub>2</sub>OH)</td>
-            <td>RCH<sub>2</sub>OH + R'OH</td>
-            <td><b>No Reaction*</b> (*Reduces only if Ph&ndash;CH=CH&ndash;C=O)</td>
-        </tr>
-        <tr>
-            <td><b>B<sub>2</sub>H<sub>6</sub></b> / THF, then H<sub>3</sub>O<sup>+</sup></td>
-            <td>1&deg; Alcohol</td>
-            <td>2&deg; Alcohol</td>
-            <td><b>Fastest! 1&deg; Alcohol</b> (Even beats Esters/NO<sub>2</sub>)</td>
-            <td>Very slow</td>
-            <td>Hydroboration</td>
-        </tr>
-        <tr>
-            <td><b>H<sub>2</sub> / Ni, Pt, or Pd</b></td>
-            <td>1&deg; Alcohol</td>
-            <td>2&deg; Alcohol</td>
-            <td>No Reaction</td>
-            <td>Requires CuCrO<sub>4</sub>, high T/P</td>
-            <td><b>Reduced to C&ndash;C</b></td>
-        </tr>
-    </tbody>
-</table>
-<p><i><b>Note for Boards:</b> Because LiAlH<sub>4</sub> is an expensive reagent, commercially carboxylic acids are reduced to alcohols by first converting them into <b>esters</b> (RCOOR'), followed by catalytic hydrogenation (H<sub>2</sub>/Catalyst).</i></p>
-
-<h4>B. From Grignard Reagents (R&ndash;Mg&ndash;X in Dry Ether, followed by H<sub>3</sub>O<sup>+</sup>)</h4>
-<div class="rxn">
-1. R&ndash;MgX + H&ndash;CH=O (Formaldehyde) &xrightarrow{1. Dry Ether, 2. H<sub>3</sub>O<sup>+</sup>} R&ndash;CH<sub>2</sub>&ndash;OH (1&deg; Alcohol with 1 extra carbon)<br>
-2. R&ndash;MgX + R'&ndash;CH=O (Any other Aldehyde) &xrightarrow{1. Dry Ether, 2. H<sub>3</sub>O<sup>+</sup>} R&ndash;CH(OH)&ndash;R' (2&deg; Alcohol)<br>
-3. R&ndash;MgX + R'&ndash;CO&ndash;R'' (Ketone) &xrightarrow{1. Dry Ether, 2. H<sub>3</sub>O<sup>+</sup>} R(R')(R'')C&ndash;OH (3&deg; Alcohol)<br>
-4. 2 R&ndash;MgX (Excess) + R'&ndash;CO&ndash;Cl or R'&ndash;CO&ndash;OR'' (Acid Chloride / Ester) &rarr; R'&ndash;C(OH)(R)<sub>2</sub> (3&deg; Alcohol with two identical R groups)<br>
-5. R&ndash;MgX + Ethylene Oxide (Epoxide) &xrightarrow{1. Dry Ether, 2. H<sub>3</sub>O<sup>+</sup>} R&ndash;CH<sub>2</sub>&ndash;CH<sub>2</sub>&ndash;OH (1&deg; Alcohol with 2 extra carbons)
-</div>
-
-<h3>2.3 All 4 Methods of Preparation of Phenols (Board &amp; JEE Essentials)</h3>
-<ol>
-    <li><b>From Haloarenes (Dow's Process):</b><br>
-        Chlorobenzene is fused with NaOH at drastic conditions (<b>623 K and 300 atm</b>) to yield Sodium Phenoxide, which on acidification gives Phenol. <i>(Mechanism at high temp proceeds via a <b>Benzyne intermediate</b>).</i>
-        <div class="rxn">C<sub>6</sub>H<sub>5</sub>Cl + 2NaOH &xrightarrow{623 K, 300 atm} C<sub>6</sub>H<sub>5</sub>O<sup>&minus;</sup>Na<sup>+</sup> + NaCl + H<sub>2</sub>O &xrightarrow{HCl} C<sub>6</sub>H<sub>5</sub>OH</div>
-    </li>
-    <li><b>From Benzene Sulphonic Acid:</b><br>
-        Benzene is sulphonated with <b>Oleum</b> (H<sub>2</sub>S<sub>2</sub>O<sub>7</sub>), fused with molten NaOH (573&ndash;623 K), and acidified.
-        <div class="rxn">C<sub>6</sub>H<sub>6</sub> &xrightarrow{Oleum} C<sub>6</sub>H<sub>5</sub>SO<sub>3</sub>H &xrightarrow{1. NaOH (fuse), 2. H<sup>+</sup>} C<sub>6</sub>H<sub>5</sub>OH</div>
-    </li>
-    <li><b>From Diazonium Salts (Laboratory Method):</b><br>
-        Aniline is diazotized with NaNO<sub>2</sub> + HCl at 0&ndash;5&deg;C (273&ndash;278 K) to form Benzene Diazonium Chloride, which upon warming with water releases N<sub>2</sub> gas and forms Phenol.
-        <div class="rxn">C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub> &xrightarrow{NaNO<sub>2</sub> + HCl, 273-278 K} C<sub>6</sub>H<sub>5</sub>N<sub>2</sub><sup>+</sup>Cl<sup>&minus;</sup> &xrightarrow{H<sub>2</sub>O, Warm} C<sub>6</sub>H<sub>5</sub>OH + N<sub>2</sub>&uarr; + HCl</div>
-    </li>
-    <li><b>From Cumene (Commercial / Industrial Method &ndash; HIGHEST WEIGHTAGE):</b><br>
-        Cumene (Isopropylbenzene, prepared via Friedel-Crafts alkylation of benzene with propene in H<sub>3</sub>PO<sub>4</sub>) undergoes aerial oxidation in the presence of O<sub>2</sub> (free-radical mechanism at the benzylic 3&deg; C&ndash;H bond) to form <b>Cumene hydroperoxide</b>. Treating it with dilute H<sub>2</sub>SO<sub>4</sub> causes a 1,2-phenyl migration to yield <b>Phenol and Acetone</b> (valuable industrial co-product!).
-        <div class="rxn">C<sub>6</sub>H<sub>5</sub>&ndash;CH(CH<sub>3</sub>)<sub>2</sub> (Cumene) + O<sub>2</sub> &xrightarrow{Air, ~400 K} C<sub>6</sub>H<sub>5</sub>&ndash;C(CH<sub>3</sub>)<sub>2</sub>&ndash;O&ndash;O&ndash;H &xrightarrow{Dil. H<sub>2</sub>SO<sub>4</sub>, 360 K} C<sub>6</sub>H<sub>5</sub>OH (Phenol) + CH<sub>3</sub>COCH<sub>3</sub> (Acetone)</div>
-    </li>
-</ol>
-
-<!-- ===================================================================== -->
-<!-- SECTION 3 -->
-<!-- ===================================================================== -->
-<h2>SECTION 3: Physical Properties &amp; Acidity Trends</h2>
-
-<h3>3.1 Boiling Points &amp; Water Solubility</h3>
-<ul>
-    <li><b>Intermolecular H-Bonding:</b> Alcohols and phenols have much higher boiling points than ethers, haloalkanes, and hydrocarbons of comparable molecular masses due to strong <b>intermolecular hydrogen bonding</b>.
-        <div class="rxn">Boiling Point Order (Comparable Mass): Carboxylic Acids &gt; Alcohols &gt; Aldehydes/Ketones &gt; Ethers &gt; Alkanes</div>
-        <i>Example:</i> Ethanol (MW = 46, BP = 351 K) &gt;&gt; Methoxymethane (MW = 46, BP = 248 K) &gt; Propane (MW = 44, BP = 231 K).
-    </li>
-    <li><b>Effect of Branching in Isomeric Alcohols:</b> As branching increases, surface area decreases (molecule becomes spherical), weakening Van der Waals dispersion forces.
-        <div class="rxn">Boiling Point of Isomeric Alcohols: 1&deg; (Butan-1-ol) &gt; 2&deg; (Butan-2-ol) &gt; 3&deg; (2-Methylpropan-2-ol)</div>
-    </li>
-    <li><b>Solubility in Water:</b> Lower alcohols (C<sub>1</sub>&ndash;C<sub>3</sub>) are miscible with water in all proportions due to H-bonding with water. As the hydrophobic alkyl chain (&ndash;R) grows larger, solubility decreases. Among isomers, <b>branching increases solubility</b> (3&deg; &gt; 2&deg; &gt; 1&deg;) because a spherical alkyl group has a smaller hydrophobic surface area.</li>
-</ul>
-
-<div class="box board-must">
-    <span class="box-title"><span class="badge badge-board">Board Classic Question</span><i>o</i>-Nitrophenol vs. <i>p</i>-Nitrophenol (Steam Distillation &amp; Boiling Point)</span>
-    <ul>
-        <li><b><i>o</i>-Nitrophenol</b> forms <b>intramolecular H-bonding</b> (chelation within the same molecule, forming a 6-membered ring). Thus, attraction between separate molecules is weak &rarr; <b>Lower Boiling Point, Steam Volatile, Less soluble in water</b>.</li>
-        <li><b><i>p</i>-Nitrophenol</b> forms <b>intermolecular H-bonding</b> (associates multiple molecules together) &rarr; <b>Higher Boiling Point, Not steam volatile, More soluble in water</b>.</li>
-        <li><b>Conclusion:</b> A mixture of <i>o</i>- and <i>p</i>-nitrophenol is easily separated by <b>steam distillation</b> (<i>o</i>-isomer distills over with steam!).</li>
-    </ul>
-</div>
-
-<h3>3.2 Acidity Masterclass (Guaranteed JEE &amp; Board Topic)</h3>
-
-<h4>A. Acidity of Alcohols (1&deg; vs 2&deg; vs 3&deg;) &amp; Comparison with Water</h4>
-<ul>
-    <li>Alkyl groups are electron-releasing (<b>+I effect</b>). They increase electron density on the oxygen atom, making the O&ndash;H bond less polar and <b>destabilizing the conjugate base (alkoxide ion, R&ndash;O<sup>&minus;</sup>)</b> by intensifying the negative charge and sterically hindering solvation by water.</li>
-    <li><b>Acidity Order in Aqueous Solution:</b>
-        <div class="rxn">CH<sub>3</sub>OH (Methanol, pK<sub>a</sub> = 15.5) &gt; H<sub>2</sub>O (Water, pK<sub>a</sub> = 15.7) &gt; 1&deg; Alcohol &gt; 2&deg; Alcohol &gt; 3&deg; Alcohol (pK<sub>a</sub> &approx; 18)</div>
-        <i>Note:</i> Since water is a stronger acid than alcohols (except methanol), <b>Alkoxide ions (R&ndash;O<sup>&minus;</sup>) are stronger bases than OH<sup>&minus;</sup></b>: R&ndash;O<sup>&minus;</sup> + H<sub>2</sub>O &rarr; R&ndash;OH + OH<sup>&minus;</sup>. Therefore, alcohols do NOT react with NaOH!
-    </li>
-</ul>
-
-<h4>B. Why is Phenol (~1 Million Times) More Acidic than Ethanol? (Board 2-Mark Answer)</h4>
-<ol>
-    <li><b>Hybridization of Carbon:</b> In Phenol, the &ndash;OH group is attached to an <b>sp<sup>2</sup> hybridized</b> carbon (more electronegative), which pulls electron density away from oxygen, increasing O&ndash;H bond polarity. In ethanol, it is attached to an sp<sup>3</sup> carbon.</li>
-    <li><b>Resonance Stabilization of Conjugate Base:</b>
-        <ul>
-            <li>Ionization of ethanol gives the <b>ethoxide ion (C<sub>2</sub>H<sub>5</sub>O<sup>&minus;</sup>)</b>, where the negative charge is strictly localized on the oxygen atom and further destabilized by the +I effect of &ndash;C<sub>2</sub>H<sub>5</sub>.</li>
-            <li>Ionization of phenol gives the <b>phenoxide ion (C<sub>6</sub>H<sub>5</sub>O<sup>&minus;</sup>)</b>, where the negative charge is delocalized over the ortho and para carbons of the benzene ring via resonance.</li>
-        </ul>
-    </li>
-    <li><b>Why Phenoxide ion is more stable than Phenol itself:</b> Resonance structures of neutral phenol involve <b>charge separation</b> (+ve charge on O and &minus;ve charge on the ring), which requires energy. Resonance structures of the phenoxide ion carry <b>no charge separation</b> (dispersal of negative charge only), making the phenoxide ion vastly more stable and driving the equilibrium toward H<sup>+</sup> release!</li>
-</ol>
-
-<h4>C. Effect of Substituents on Acidity of Phenol (JEE Advanced Level)</h4>
-<ul>
-    <li><b>Electron-Withdrawing Groups (EWG: &ndash;NO<sub>2</sub>, &ndash;CN, &ndash;CHO, &ndash;COOH, &ndash;X):</b> Disperse the negative charge of the phenoxide ion &rarr; <b>Increase Acidity (Lower pK<sub>a</sub>)</b>. Effect is much stronger at <i>ortho</i> and <i>para</i> positions than <i>meta</i> because resonance (&ndash;M / &ndash;R) operates only at <i>ortho</i> and <i>para</i>, whereas <i>meta</i> only experiences inductive (&ndash;I) effect.</li>
-    <li><b>Electron-Donating Groups (EDG: &ndash;OCH<sub>3</sub>, &ndash;NH<sub>2</sub>, &ndash;CH<sub>3</sub>):</b> Intensify the negative charge &rarr; <b>Decrease Acidity (Higher pK<sub>a</sub>)</b>.</li>
-</ul>
-
-<div class="box jee-trap">
-    <span class="box-title"><span class="badge badge-jee">Exact JEE Acidity Orders to Memorize</span></span>
-    <ol>
-        <li><b>Nitrophenols:</b> <b><i>p</i>-Nitrophenol (pK<sub>a</sub> 7.1) &gt; <i>o</i>-Nitrophenol (pK<sub>a</sub> 7.2) &gt; <i>m</i>-Nitrophenol (pK<sub>a</sub> 8.3) &gt; Phenol (pK<sub>a</sub> 10.0)</b><br>
-            <i>Why is para slightly more acidic than ortho?</i> In <i>o</i>-nitrophenol, <b>intramolecular H-bonding</b> locks the proton slightly, making H<sup>+</sup> release marginally harder than in the <i>para</i> isomer!
-        </li>
-        <li><b>Number of &ndash;NO<sub>2</sub> groups:</b> <b>2,4,6-Trinitrophenol (Picric Acid, pK<sub>a</sub> 0.71) &gt; 2,4-Dinitrophenol (pK<sub>a</sub> 4.0) &gt; <i>p</i>-Nitrophenol (pK<sub>a</sub> 7.1) &gt; Phenol (10.0)</b></li>
-        <li><b>Cresols (Methylphenols):</b> <b>Phenol (10.0) &gt; <i>m</i>-Cresol (10.1) &gt; <i>p</i>-Cresol (10.2) &gt; <i>o</i>-Cresol (10.3)</b><br>
-            <i>Why?</i> &ndash;CH<sub>3</sub> shows +H (hyperconjugation) and +I at <i>ortho/para</i>, but only weak +I at <i>meta</i>. Since +I is distance-dependent, <i>ortho</i> has the strongest destabilizing +I effect.
-        </li>
-        <li><b>Methoxyphenols (&ndash;OCH<sub>3</sub> has +M &gt; &ndash;I, except at meta where only &ndash;I acts!):</b><br>
-            <b><i>m</i>-Methoxyphenol (&ndash;I only, more acidic than phenol!) &gt; Phenol &gt; <i>o</i>-Methoxyphenol &gt; <i>p</i>-Methoxyphenol (+M dominates)</b>
-        </li>
-        <li><b>Overall Organic Acidity Hierarchy (For NaHCO<sub>3</sub> vs NaOH vs Na Tests):</b><br>
-            <b>Sulphonic Acids (RSO<sub>3</sub>H) &gt; Picric Acid &gt; Carboxylic Acids (RCOOH, pK<sub>a</sub> ~4.8) &gt; H<sub>2</sub>CO<sub>3</sub> (pK<sub>a</sub> 6.4) &gt; Phenols (pK<sub>a</sub> 10) &gt; H<sub>2</sub>O (15.7) &gt; Alcohols (16&ndash;18) &gt; Terminal Alkynes (25)</b>
-        </li>
-    </ol>
-</div>
-
-<!-- ===================================================================== -->
-<!-- SECTION 4 -->
-<!-- ===================================================================== -->
-<h2>SECTION 4: Chemical Reactions of Alcohols &amp; Phenols</h2>
-
-<h3>4.1 Reactions Involving O&ndash;H Bond Cleavage (Alcohols &amp; Phenols Act as Nucleophiles)</h3>
-<ol>
-    <li><b>Reaction with Active Metals (Na, K, Al):</b> Both alcohols and phenols liberate H<sub>2</sub> gas. Phenols ALSO react with aqueous NaOH to form Sodium Phenoxide, whereas alcohols do NOT react with NaOH. Neither Phenol nor Alcohol reacts with NaHCO<sub>3</sub> (except Picric Acid!).</li>
-    <li><b>Esterification (Fischer Esterification &amp; Acylation):</b>
-        <ul>
-            <li>With Carboxylic Acids: R&ndash;OH + R'&ndash;COOH &xrightleftharpoons{Conc. H<sub>2</sub>SO<sub>4</sub>} R'&ndash;COOR + H<sub>2</sub>O. <i>(Reversible! Water is removed continuously to shift equilibrium right).</i></li>
-            <li><b>Reactivity Order of Alcohols/Acids in Esterification (Steric Control):</b> CH<sub>3</sub>OH &gt; 1&deg; &gt; 2&deg; &gt; 3&deg; and HCOOH &gt; CH<sub>3</sub>COOH &gt; RCH<sub>2</sub>COOH.</li>
-            <li><b>Isotopic Labeling Proof (JEE Must-Know):</b> In R'&ndash;COOH + R&ndash;<sup>18</sup>OH &rarr; R'&ndash;CO&ndash;<sup>18</sup>OR + H<sub>2</sub>O, the <b>acyl C&ndash;OH bond of carboxylic acid breaks</b> and the <b>O&ndash;H bond of alcohol breaks</b>!</li>
-            <li>With Acid Chlorides (R'COCl): Carried out in the presence of <b>Pyridine</b> (base) to neutralize HCl formed and shift equilibrium forward.</li>
-            <li><b>Synthesis of Aspirin (Acetylation of Salicylic Acid &ndash; Board Favorite):</b>
-                <div class="rxn">2-Hydroxybenzoic acid (Salicylic Acid) + (CH<sub>3</sub>CO)<sub>2</sub>O (Acetic anhydride) &xrightarrow{H<sup>+</sup>} 2-Acetoxybenzoic acid (Aspirin) + CH<sub>3</sub>COOH</div>
-                <i>Note:</i> Salicylic acid + CH<sub>3</sub>OH / H<sup>+</sup> gives <b>Methyl Salicylate (Oil of Wintergreen)</b>; Salicylic acid + Phenol / POCl<sub>3</sub> gives <b>Phenyl Salicylate (Salol)</b>.
-            </li>
-        </ul>
-    </li>
-</ol>
-
-<h3>4.2 Reactions Involving C&ndash;O Bond Cleavage (ONLY Alcohols &ndash; Phenols Do NOT Cleave C&ndash;O easily!)</h3>
-<p><i>Why don't phenols show C&ndash;O bond cleavage with HX/PX<sub>3</sub>?</i> Because of resonance, the C&ndash;O bond in phenol has partial double-bond character and the carbon is sp<sup>2</sup> hybridized, making nucleophilic substitution extremely difficult.</p>
-
-<h4>A. Reaction with Hydrogen Halides (R&ndash;OH + HX &rarr; R&ndash;X + H<sub>2</sub>O) &amp; Lucas Test</h4>
-<ul>
-    <li><b>Reactivity of HX:</b> HI &gt; HBr &gt; HCl (depends on bond dissociation enthalpy and nucleophilicity of X<sup>&minus;</sup>).</li>
-    <li><b>Reactivity of Alcohols:</b> Allylic / Benzylic / 3&deg; &gt; 2&deg; &gt; 1&deg; (Proceeds via S<sub>N</sub>1 for 2&deg; and 3&deg; alcohols &rarr; <b>Carbocation rearrangements occur!</b> Proceeds via S<sub>N</sub>2 for 1&deg; alcohols).</li>
-    <li><b>Lucas Reagent (Conc. HCl + Anhydrous ZnCl<sub>2</sub>):</b> Anhydrous ZnCl<sub>2</sub> acts as a Lewis acid that coordinates with the oxygen lone pair of &ndash;OH, converting poor leaving group (&ndash;OH) into a good leaving group (&ndash;O<sup>+</sup>H&ndash;ZnCl<sub>2</sub><sup>&minus;</sup>).
-        <ul>
-            <li><b>3&deg; (plus Allylic/Benzylic) Alcohols:</b> White turbidity (insoluble alkyl chloride R&ndash;Cl) appears <b>immediately</b>.</li>
-            <li><b>2&deg; Alcohols:</b> White turbidity appears in <b>5 minutes</b>.</li>
-            <li><b>1&deg; Alcohols:</b> <b>No turbidity at room temperature</b> (turbidity appears only on heating).</li>
-        </ul>
-    </li>
-</ul>
-
-<h4>B. Reaction with Phosphorus Halides &amp; Thionyl Chloride (Stereochemistry for JEE)</h4>
-<table>
-    <thead>
-        <tr>
-            <th>Reagent</th>
-            <th>Reaction Equation</th>
-            <th>Mechanism &amp; Stereochemistry</th>
-            <th>Special Feature</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><b>PX<sub>3</sub></b> (PCl<sub>3</sub>, PBr<sub>3</sub>, Red P + I<sub>2</sub>)</td>
-            <td>3 R&ndash;OH + PX<sub>3</sub> &rarr; 3 R&ndash;X + H<sub>3</sub>PO<sub>3</sub></td>
-            <td><b>S<sub>N</sub>2</b> &rarr; <b>Inversion of configuration</b> (No carbocation rearrangement)</td>
-            <td>Good yield for 1&deg; and 2&deg; alcohols</td>
-        </tr>
-        <tr>
-            <td><b>PCl<sub>5</sub></b></td>
-            <td>R&ndash;OH + PCl<sub>5</sub> &rarr; R&ndash;Cl + POCl<sub>3</sub> + HCl</td>
-            <td><b>S<sub>N</sub>2</b> in non-polar solvents (Inversion)</td>
-            <td>Solid reagent</td>
-        </tr>
-        <tr>
-            <td><b>SOCl<sub>2</sub></b> (Thionyl Chloride)</td>
-            <td>R&ndash;OH + SOCl<sub>2</sub> &rarr; R&ndash;Cl + SO<sub>2</sub>&uarr; + HCl&uarr;</td>
-            <td><ul><li><b>Without Pyridine (in Ether/Dioxane):</b> <b>S<sub>N</sub>i</b> (Internal Nucleophilic Substitution) &rarr; <b>Retention of configuration!</b></li><li><b>With Pyridine (Darzen's Process):</b> Pyridine reacts with HCl to give Cl<sup>&minus;</sup> which attacks from backside &rarr; <b>S<sub>N</sub>2 (Inversion of configuration!)</b></li></ul></td>
-            <td><b>Best method to prepare R&ndash;Cl!</b> Because both byproducts (SO<sub>2</sub> and HCl) are escapable gases, leaving pure R&ndash;Cl behind.</td>
-        </tr>
-    </tbody>
-</table>
-
-<h4>C. Acid-Catalyzed Dehydration of Alcohols to Alkenes</h4>
-<ul>
-    <li><b>Ease of Dehydration (follows carbocation stability):</b> <b>3&deg; Alcohol &gt; 2&deg; Alcohol &gt; 1&deg; Alcohol</b>
-        <ul>
-            <li><b>1&deg; Alcohol (Ethanol):</b> Conc. H<sub>2</sub>SO<sub>4</sub> at <b>443 K (170&deg;C)</b>.</li>
-            <li><b>2&deg; Alcohol:</b> 85% H<sub>3</sub>PO<sub>4</sub> at <b>440 K</b>.</li>
-            <li><b>3&deg; Alcohol:</b> Mild 20% H<sub>3</sub>PO<sub>4</sub> at <b>358 K</b>.</li>
-        </ul>
-    </li>
-    <li><b>Zaitsev (Saytzeff) Rule:</b> The more substituted (more stable, having more &alpha;-hydrogens) alkene is the <b>major product</b>, and the <i>trans</i>-isomer is major over the <i>cis</i>-isomer. Always check for <b>1,2-hydride shift, 1,2-methyl shift, or ring expansion (4&rarr;5 or 5&rarr;6 membered ring)</b> before eliminating H<sup>+</sup>!</li>
-</ul>
-
-<div class="mech-box">
-    <span class="box-title"><span class="badge badge-board">Mandatory NCERT Mechanism #2</span>Acidic Dehydration of Ethanol to Ethene (at 443 K)</span>
-    <b>Equation:</b> CH<sub>3</sub>&ndash;CH<sub>2</sub>&ndash;OH &xrightarrow{Conc. H<sub>2</sub>SO<sub>4</sub>, 443 K} CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O
-    <ul>
-        <li><b>Step 1: Formation of protonated alcohol (Fast &amp; Reversible):</b><br>
-            CH<sub>3</sub>&ndash;CH<sub>2</sub>&ndash;OH + H<sup>+</sup> &rightleftharpoons; CH<sub>3</sub>&ndash;CH<sub>2</sub>&ndash;O<sup>+</sup>H<sub>2</sub> (Ethyl oxonium ion)
-        </li>
-        <li><b>Step 2: Formation of carbocation by loss of water (Slowest / Rate-Determining Step):</b><br>
-            CH<sub>3</sub>&ndash;CH<sub>2</sub>&ndash;O<sup>+</sup>H<sub>2</sub> &rarr; CH<sub>3</sub>&ndash;CH<sub>2</sub><sup>+</sup> + H<sub>2</sub>O
-        </li>
-        <li><b>Step 3: Formation of ethene by elimination of a proton (Fast):</b><br>
-            H&ndash;CH<sub>2</sub>&ndash;CH<sub>2</sub><sup>+</sup> &rarr; CH<sub>2</sub>=CH<sub>2</sub> + H<sup>+</sup>
-        </li>
-    </ul>
-</div>
-
-<h4>D. Oxidation of Alcohols (Complete Reagent Matrix)</h4>
-<table>
-    <thead>
-        <tr>
-            <th>Reagent</th>
-            <th>1&deg; Alcohol (R&ndash;CH<sub>2</sub>OH)</th>
-            <th>2&deg; Alcohol (R&ndash;CH(OH)&ndash;R')</th>
-            <th>3&deg; Alcohol (R<sub>3</sub>C&ndash;OH)</th>
-            <th>Special Notes / Selectivity</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><b>PCC</b> (Pyridinium Chlorochromate: CrO<sub>3</sub> + C<sub>5</sub>H<sub>5</sub>N + HCl in CH<sub>2</sub>Cl<sub>2</sub>), <b>PDC</b>, or Anhyd. CrO<sub>3</sub></td>
-            <td><b>Aldehyde (R&ndash;CHO)</b><br>(Stops here! No over-oxidation)</td>
-            <td>Ketone (R&ndash;CO&ndash;R')</td>
-            <td>No Reaction</td>
-            <td><b>Best reagent for 1&deg; Alcohol &rarr; Aldehyde.</b> Does NOT attack C=C double bonds!</td>
-        </tr>
-        <tr>
-            <td><b>Acidified KMnO<sub>4</sub></b>, Acidified <b>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub></b>, or <b>Jones Reagent</b> (CrO<sub>3</sub> + aq. H<sub>2</sub>SO<sub>4</sub> in Acetone)</td>
-            <td><b>Carboxylic Acid (R&ndash;COOH)</b></td>
-            <td>Ketone (R&ndash;CO&ndash;R')</td>
-            <td>No Reaction (under mild conditions; strong heat cleaves C&ndash;C bonds)</td>
-            <td>Orange Cr<sub>2</sub>O<sub>7</sub><sup>2&minus;</sup> turns <b>Green [Cr<sup>3+</sup>]</b> with 1&deg; and 2&deg; alcohols (Breathalyzer test!).</td>
-        </tr>
-        <tr>
-            <td><b>Red Hot Cu / 573 K (300&deg;C)</b><br>(Catalytic Dehydrogenation)</td>
-            <td><b>Aldehyde</b> + H<sub>2</sub>&uarr;</td>
-            <td><b>Ketone</b> + H<sub>2</sub>&uarr;</td>
-            <td><b>ALKENE + H<sub>2</sub>O</b><br><span class="badge badge-jee">Dehydration!</span></td>
-            <td>3&deg; alcohol has no &alpha;-H, so it undergoes <b>dehydration to alkene</b> instead of dehydrogenation!</td>
-        </tr>
-        <tr>
-            <td><b>MnO<sub>2</sub></b> (Activated Manganese Dioxide)</td>
-            <td>Oxidizes <b>ONLY Allylic &amp; Benzylic</b> 1&deg;/2&deg; alcohols to Aldehydes/Ketones</td>
-            <td>Allylic/Benzylic 2&deg; &rarr; Ketone</td>
-            <td>No Reaction</td>
-            <td>Normal saturated &ndash;OH groups remain untouched!</td>
-        </tr>
-    </tbody>
-</table>
-
-<h3>4.3 Reactions of Phenols (Electrophilic Aromatic Substitution &amp; Named Reactions)</h3>
-<p>The &ndash;OH group in phenol is a <b>powerful activating and <i>ortho/para</i>-directing group</b> (+M &gt;&gt; &ndash;I). In alkaline medium, phenol forms the <b>phenoxide ion (C<sub>6</sub>H<sub>5</sub>O<sup>&minus;</sup>)</b>, which is an even stronger ring activator than neutral &ndash;OH.</p>
-
-<h4>1. Halogenation (Solvent Effect &ndash; Board &amp; JEE Favourite)</h4>
-<ul>
-    <li><b>With Bromine in Low-Polarity Solvent (Br<sub>2</sub> in CS<sub>2</sub> or CHCl<sub>3</sub> at 273 K):</b> Phenol does not ionize into phenoxide ion; ring is only moderately activated &rarr; Gives <b>Monobromophenols</b>: <b><i>p</i>-Bromophenol (Major, ~80&ndash;90%)</b> + <i>o</i>-Bromophenol (Minor). No Lewis acid (FeBr<sub>3</sub>) is required!</li>
-    <li><b>With Bromine Water (Br<sub>2</sub> / H<sub>2</sub>O):</b> Polar water facilitates ionization of phenol into the hyper-reactive <b>phenoxide ion</b> and polarizes Br<sub>2</sub> heavily &rarr; Trisubstitution occurs immediately to yield a <b>white precipitate of 2,4,6-Tribromophenol</b>.</li>
-</ul>
-
-<h4>2. Nitration</h4>
-<ul>
-    <li><b>With Dilute HNO<sub>3</sub> at 298 K (25&deg;C):</b> Gives a mixture of <b><i>o</i>-Nitrophenol</b> and <b><i>p</i>-Nitrophenol</b> (separated by steam distillation).</li>
-    <li><b>With Concentrated HNO<sub>3</sub> ( + Conc. H<sub>2</sub>SO<sub>4</sub>):</b> Gives <b>2,4,6-Trinitrophenol (Picric Acid)</b> (bright yellow solid).<br>
-        <i>Board Note:</i> Yield of Picric acid by direct nitration is very poor because conc. HNO<sub>3</sub> is a strong oxidizing agent and oxidizes most of the phenol ring into tarry oxidation products. <b>Modern Industrial Method:</b> Phenol is first treated with conc. H<sub>2</sub>SO<sub>4</sub> to form phenol-2,4-disulphonic acid (deactivates ring against oxidation), and then treated with conc. HNO<sub>3</sub> to get a high yield of Picric Acid!
-    </li>
-</ul>
-
-<h4>3. Kolbe's Reaction (Kolbe-Schmitt Reaction)</h4>
-<div class="rxn">
-Phenol &xrightarrow{1. NaOH} Sodium Phenoxide &xrightarrow{2. CO<sub>2</sub> (400 K, 4-7 atm), 3. H<sup>+</sup>} 2-Hydroxybenzoic acid (Salicylic Acid - Major)
-</div>
-<ul>
-    <li><b>Electrophile:</b> Carbon dioxide (<b>CO<sub>2</sub></b>), a weak electrophile. That is why phenol must first be converted into the much more nucleophilic <b>phenoxide ion</b> using NaOH!</li>
-    <li><b>JEE Advanced Twist (NaOH vs KOH):</b> Using <b>NaOH</b> gives the <b><i>ortho</i>-isomer (Salicylic acid)</b> as major because the small Na<sup>+</sup> ion chelates both the phenoxide oxygen and CO<sub>2</sub> oxygen in a 6-membered cyclic transition state. If <b>KOH</b> is used (larger K<sup>+</sup> ion cannot chelate effectively), the <b><i>para</i>-isomer (4-Hydroxybenzoic acid)</b> becomes the major product!</li>
-</ul>
-
-<h4>4. Reimer-Tiemann Reaction</h4>
-<div class="rxn">
-Phenol &xrightarrow{1. CHCl<sub>3</sub> + aq. NaOH (340 K)} [Intermediate: Benzal chloride salt] &xrightarrow{2. NaOH, 3. Dil. HCl} 2-Hydroxybenzaldehyde (Salicylaldehyde - Major)
-</div>
-<ul>
-    <li><b>Electrophile (JEE Frequent Question):</b> <b>Dichlorocarbene (:CCl<sub>2</sub>)</b> — neutral, electron-deficient (6 valence electrons on carbon, singlet carbene, sp<sup>2</sup> hybridized) formed via <b>&alpha;-elimination</b> from CHCl<sub>3</sub> + OH<sup>&minus;</sup>:
-        <div class="rxn">CHCl<sub>3</sub> + OH<sup>&minus;</sup> &rightleftharpoons; :C<sup>&minus;</sup>Cl<sub>3</sub> + H<sub>2</sub>O &rarr; :CCl<sub>2</sub> (Dichlorocarbene) + Cl<sup>&minus;</sup></div>
-    </li>
-    <li><b>Variation:</b> If <b>CCl<sub>4</sub></b> (Carbon tetrachloride) is used instead of CHCl<sub>3</sub> with aq. NaOH, the final product after acidification is <b>Salicylic Acid (2-Hydroxybenzoic acid)</b>!</li>
-</ul>
-
-<h4>5. Reaction with Zinc Dust &amp; Oxidation</h4>
-<ul>
-    <li><b>Reduction with Zn Dust:</b> C<sub>6</sub>H<sub>5</sub>OH + Zn (dust) &xrightarrow{Heat} <b>C<sub>6</sub>H<sub>6</sub> (Benzene)</b> + ZnO.</li>
-    <li><b>Oxidation of Phenol:</b> C<sub>6</sub>H<sub>5</sub>OH &xrightarrow{Na<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> / Conc. H<sub>2</sub>SO<sub>4</sub> (or Air)} <b><i>p</i>-Benzoquinone</b> (a conjugated diketone). <i>(In the presence of air, phenol slowly oxidizes to a dark pink/reddish-brown mixture containing quinones, known as phenoquinone).</i></li>
-</ul>
-
-<!-- ===================================================================== -->
-<!-- SECTION 5 -->
-<!-- ===================================================================== -->
-<h2>SECTION 5: Ethers &ndash; Preparation &amp; Chemical Cleavage</h2>
-
-<h3>5.1 Methods of Preparation of Ethers</h3>
-
-<h4>A. By Dehydration of Alcohols (Temperature-Dependent Reaction)</h4>
-<ul>
-    <li>At <b>443 K (170&deg;C)</b> with conc. H<sub>2</sub>SO<sub>4</sub>: Ethanol undergoes <b>intramolecular dehydration (elimination)</b> to form <b>Ethene (CH<sub>2</sub>=CH<sub>2</sub>)</b>.</li>
-    <li>At <b>413 K (140&deg;C)</b> with conc. H<sub>2</sub>SO<sub>4</sub> (and excess alcohol): Ethanol undergoes <b>intermolecular nucleophilic substitution (S<sub>N</sub>2)</b> to form <b>Ethoxyethane (C<sub>2</sub>H<sub>5</sub>&ndash;O&ndash;C<sub>2</sub>H<sub>5</sub>)</b>.</li>
-</ul>
-
-<div class="mech-box">
-    <span class="box-title"><span class="badge badge-board">Mandatory NCERT Mechanism #3</span>Acidic Dehydration of Ethanol to Ethoxyethane (at 413 K)</span>
-    <b>Equation:</b> 2 CH<sub>3</sub>CH<sub>2</sub>OH &xrightarrow{Conc. H<sub>2</sub>SO<sub>4</sub>, 413 K} CH<sub>3</sub>CH<sub>2</sub>&ndash;O&ndash;CH<sub>2</sub>CH<sub>3</sub> + H<sub>2</sub>O (<b>Bimolecular S<sub>N</sub>2 Mechanism</b>)
-    <ul>
-        <li><b>Step 1: Protonation of one ethanol molecule:</b><br>
-            CH<sub>3</sub>CH<sub>2</sub>&ndash;O&ndash;H + H<sup>+</sup> &rightleftharpoons; CH<sub>3</sub>CH<sub>2</sub>&ndash;O<sup>+</sup>H<sub>2</sub>
-        </li>
-        <li><b>Step 2: Nucleophilic attack (S<sub>N</sub>2) by a second unprotonated alcohol molecule on the protonated alcohol:</b><br>
-            CH<sub>3</sub>CH<sub>2</sub>&ndash;OH + CH<sub>3</sub>CH<sub>2</sub>&ndash;O<sup>+</sup>H<sub>2</sub> &rarr; CH<sub>3</sub>CH<sub>2</sub>&ndash;O<sup>+</sup>(H)&ndash;CH<sub>2</sub>CH<sub>3</sub> + H<sub>2</sub>O
-        </li>
-        <li><b>Step 3: Deprotonation to yield symmetrical ether:</b><br>
-            CH<sub>3</sub>CH<sub>2</sub>&ndash;O<sup>+</sup>(H)&ndash;CH<sub>2</sub>CH<sub>3</sub> &rarr; CH<sub>3</sub>CH<sub>2</sub>&ndash;O&ndash;CH<sub>2</sub>CH<sub>3</sub> + H<sup>+</sup>
-        </li>
-    </ul>
-    <b>Limitations of this method (Board 2-Mark Q):</b>
-    <ol>
-        <li>Suitable only for preparing <b>symmetrical ethers</b> from <b>1&deg; alcohols</b>.</li>
-        <li>For <b>2&deg; and 3&deg; alcohols</b>, steric hindrance prevents S<sub>N</sub>2 attack, and elimination (E1) dominates to give <b>alkenes</b> as the main product!</li>
-    </ol>
-</div>
-
-<h4>B. Williamson Ether Synthesis (Best Method for Both Symmetrical &amp; Unsymmetrical Ethers)</h4>
-<div class="rxn">R&ndash;O<sup>&minus;</sup>Na<sup>+</sup> (Sodium Alkoxide/Phenoxide) + R'&ndash;X (Alkyl Halide) &xrightarrow{S<sub>N</sub>2} R&ndash;O&ndash;R' + NaX</div>
-<div class="box jee-trap">
-    <span class="box-title"><span class="badge badge-jee">Golden Rules of Williamson Synthesis (100% Exam Frequency)</span></span>
-    Since Williamson synthesis proceeds strictly via an <b>S<sub>N</sub>2 mechanism</b>, the alkyl halide (R'&ndash;X) MUST be <b>unhindered (Methyl or 1&deg;)</b>! Because alkoxides (R&ndash;O<sup>&minus;</sup>) are not only strong nucleophiles but also powerful bases, using a 2&deg; or 3&deg; alkyl halide triggers <b>E2 Elimination</b> instead of substitution!
-    <table>
-        <thead>
-            <tr>
-                <th>Target Ether to Prepare</th>
-                <th>Correct Choice of Reactants (Gives Ether via S<sub>N</sub>2)</th>
-                <th>Wrong Choice of Reactants &amp; What Actually Forms</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b><i>tert</i>-Butyl methyl ether</b><br>[(CH<sub>3</sub>)<sub>3</sub>C&ndash;O&ndash;CH<sub>3</sub>]</td>
-                <td><b>(CH<sub>3</sub>)<sub>3</sub>C&ndash;O<sup>&minus;</sup>Na<sup>+</sup></b> (3&deg; Alkoxide)<br>+ <b>CH<sub>3</sub>&ndash;Br</b> (Methyl Halide)</td>
-                <td>CH<sub>3</sub>O<sup>&minus;</sup>Na<sup>+</sup> + (CH<sub>3</sub>)<sub>3</sub>C&ndash;Br (3&deg; Halide)<br>&rarr; Gives <b>2-Methylpropene [(CH<sub>3</sub>)<sub>2</sub>C=CH<sub>2</sub>]</b> via E2 elimination!</td>
-            </tr>
-            <tr>
-                <td><b>Anisole (Methyl phenyl ether)</b><br>[C<sub>6</sub>H<sub>5</sub>&ndash;O&ndash;CH<sub>3</sub>]</td>
-                <td><b>C<sub>6</sub>H<sub>5</sub>&ndash;O<sup>&minus;</sup>Na<sup>+</sup></b> (Sodium Phenoxide)<br>+ <b>CH<sub>3</sub>&ndash;I</b> (Methyl Iodide)</td>
-                <td>CH<sub>3</sub>O<sup>&minus;</sup>Na<sup>+</sup> + C<sub>6</sub>H<sub>5</sub>&ndash;Br (Bromobenzene)<br>&rarr; <b>NO REACTION!</b> (Aryl halides do not undergo S<sub>N</sub>2 due to partial double bond character of C<sub>sp2</sub>&ndash;X).</td>
-            </tr>
-            <tr>
-                <td><b>Di-<i>tert</i>-butyl ether</b> / <b>Diphenyl ether</b></td>
-                <td><b>Cannot be prepared by Williamson Synthesis!</b></td>
-                <td>Both require a 3&deg; or aryl halide, which fails S<sub>N</sub>2.</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<h3>5.2 Chemical Reactions of Ethers: Cleavage of C&ndash;O Bond by HX (The Ultimate JEE Flowchart)</h3>
-<p>Ethers are the least reactive functional group. C&ndash;O cleavage occurs only under drastic conditions with excess <b>HI or HBr</b> at high temperature (373 K). Reactivity of halogen acids: <b>HI &gt; HBr &gt; HCl</b>.</p>
-
-<table>
-    <thead>
-        <tr>
-            <th>Case / Structure of Ether (R&ndash;O&ndash;R')</th>
-            <th>Mechanism</th>
-            <th>Products with 1 Equiv. of HI (Cold/Warm)</th>
-            <th>Products with Excess HI (Hot/Conc.)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><b>Case 1: Both R and R' are 1&deg; or 2&deg; Alkyl</b><br>(e.g., CH<sub>3</sub>&ndash;O&ndash;CH<sub>2</sub>CH<sub>3</sub>)</td>
-            <td><b>S<sub>N</sub>2</b><br>(I<sup>&minus;</sup> attacks the <b>less sterically hindered / smaller</b> alkyl group!)</td>
-            <td><b>CH<sub>3</sub>&ndash;I</b> (Smaller group gets I<sup>&minus;</sup>)<br>+ <b>CH<sub>3</sub>CH<sub>2</sub>&ndash;OH</b> (Larger group gets &ndash;OH)</td>
-            <td><b>CH<sub>3</sub>&ndash;I + CH<sub>3</sub>CH<sub>2</sub>&ndash;I</b> + H<sub>2</sub>O<br>(Both convert to alkyl iodides)</td>
-        </tr>
-        <tr>
-            <td><b>Case 2: One group is 3&deg;, Benzyl (PhCH<sub>2</sub>&ndash;), or Allyl</b><br>[e.g., (CH<sub>3</sub>)<sub>3</sub>C&ndash;O&ndash;CH<sub>3</sub> or PhCH<sub>2</sub>&ndash;O&ndash;CH<sub>3</sub>]</td>
-            <td><b>S<sub>N</sub>1</b><br>(Protonated ether cleaves spontaneously to form a highly stable <b>3&deg; or Benzylic carbocation</b>!)</td>
-            <td><b>(CH<sub>3</sub>)<sub>3</sub>C&ndash;I</b> (3&deg;/Benzyl gets I<sup>&minus;</sup>!)<br>+ <b>CH<sub>3</sub>&ndash;OH</b> (Methanol)<br><i>*(Note: Only in anhydrous HI with 3&deg;/Benzyl does S<sub>N</sub>1 win)</i></td>
-            <td><b>(CH<sub>3</sub>)<sub>3</sub>C&ndash;I + CH<sub>3</sub>&ndash;I</b> + H<sub>2</sub>O</td>
-        </tr>
-        <tr>
-            <td><b>Case 3: Alkyl Aryl Ether (Anisole)</b><br>(C<sub>6</sub>H<sub>5</sub>&ndash;O&ndash;CH<sub>3</sub>)</td>
-            <td><b>S<sub>N</sub>2</b> on methyl carbon<br>(The stronger, shorter <b>C<sub>sp2</sub>(aryl)&ndash;O bond NEVER breaks</b>!)</td>
-            <td><b>C<sub>6</sub>H<sub>5</sub>&ndash;OH (Phenol) + CH<sub>3</sub>&ndash;I</b><br><i>(Never forms Iodobenzene + CH<sub>3</sub>OH!)</i></td>
-            <td><b>C<sub>6</sub>H<sub>5</sub>&ndash;OH (Phenol) + CH<sub>3</sub>&ndash;I</b><br><i>(Phenol does NOT react further with excess HI!)</i></td>
-        </tr>
-        <tr>
-            <td><b>Case 4: Diphenyl Ether</b><br>(C<sub>6</sub>H<sub>5</sub>&ndash;O&ndash;C<sub>6</sub>H<sub>5</sub>)</td>
-            <td>No Cleavage</td>
-            <td><b>No Reaction with HI!</b></td>
-            <td><b>No Reaction with HI!</b> (Both C&ndash;O bonds have partial double bond character)</td>
-        </tr>
-    </tbody>
-</table>
-
-<h3>5.3 Electrophilic Substitution in Aromatic Ethers (Anisole)</h3>
-<p>The alkoxy group (&ndash;OCH<sub>3</sub>) is <b><i>ortho, para</i>-directing and strongly activating (+M &gt; &ndash;I)</b>. Due to steric hindrance of &ndash;OCH<sub>3</sub>, the <b><i>para</i>-isomer is always the major product (~90%)</b>.</p>
-<ul>
-    <li><b>Bromination:</b> Anisole + Br<sub>2</sub> in Ethanoic acid (CH<sub>3</sub>COOH) &rarr; <b><i>p</i>-Bromoanisole (Major, 90%)</b> + <i>o</i>-Bromoanisole (Minor, 10%). <i>(No FeBr<sub>3</sub> catalyst required!).</i></li>
-    <li><b>Friedel-Crafts Alkylation:</b> Anisole + CH<sub>3</sub>Cl &xrightarrow{Anhyd. AlCl<sub>3</sub>, CS<sub>2</sub>} <b>4-Methoxytoluene (Major)</b> + 2-Methoxytoluene (Minor).</li>
-    <li><b>Friedel-Crafts Acylation:</b> Anisole + CH<sub>3</sub>COCl &xrightarrow{Anhyd. AlCl<sub>3</sub>} <b>4-Methoxyacetophenone (Major)</b> + 2-Methoxyacetophenone (Minor).</li>
-    <li><b>Nitration:</b> Anisole + Conc. HNO<sub>3</sub> + Conc. H<sub>2</sub>SO<sub>4</sub> &rarr; <b>4-Nitroanisole (Major)</b> + 2-Nitroanisole (Minor).</li>
-</ul>
-
-<!-- ===================================================================== -->
-<!-- SECTION 6 -->
-<!-- ===================================================================== -->
-<h2>SECTION 6: The "JEE Advanced" Extension Block</h2>
-
-<h3>6.1 Pinacol&ndash;Pinacolone Rearrangement (1,2-Diols + Acid)</h3>
-<p>When a vicinal diol (1,2-diol) is heated with dilute or conc. H<sub>2</sub>SO<sub>4</sub>, it dehydrates and rearranges into a carbonyl compound (ketone/aldehyde).</p>
-<div class="rxn">
-(CH<sub>3</sub>)<sub>2</sub>C(OH)&ndash;C(OH)(CH<sub>3</sub>)<sub>2</sub> (Pinacol) &xrightarrow{H<sub>2</sub>SO<sub>4</sub>, Heat} CH<sub>3</sub>&ndash;CO&ndash;C(CH<sub>3</sub>)<sub>3</sub> (Pinacolone, 3,3-Dimethylbutan-2-one) + H<sub>2</sub>O
-</div>
-<ul>
-    <li><b>Rule 1 (Which &ndash;OH leaves first?):</b> Always protonate and remove the &ndash;OH group that produces the <b>most stable carbocation</b> (e.g., Benzylic / 3&deg; &gt; 2&deg; &gt; 1&deg;; or ring bearing electron-donating &ndash;OCH<sub>3</sub> over &ndash;NO<sub>2</sub>).</li>
-    <li><b>Rule 2 (Which group migrates from the adjacent carbon? &ndash; Migratory Aptitude Order):</b><br>
-        The group with the highest electron density migrates to the carbocation to give a resonance-stabilized protonated carbonyl (oxocarbenium ion):
-        <div class="rxn">Migratory Aptitude: &ndash;H (Hydride) &gt; &ndash;Aryl with EDG (<i>p</i>-CH<sub>3</sub>O&ndash;C<sub>6</sub>H<sub>4</sub> &gt; <i>p</i>-CH<sub>3</sub>&ndash;C<sub>6</sub>H<sub>4</sub> &gt; &ndash;C<sub>6</sub>H<sub>5</sub> &gt; <i>p</i>-Cl&ndash;C<sub>6</sub>H<sub>4</sub>) &gt; 3&deg; Alkyl &gt; 2&deg; Alkyl &gt; 1&deg; Alkyl &gt; &ndash;CH<sub>3</sub></div>
-    </li>
-    <li><b>Rule 3 (Ring Expansion in Spiro/Cyclic Diols):</b> If one &ndash;OH is on a cyclopentane ring and the adjacent &ndash;OH is on an acyclic carbon [e.g., 1-(1-hydroxy-1-methylethyl)cyclopentanol], loss of the acyclic &ndash;OH causes the 5-membered ring C&ndash;C bond to migrate, expanding it into a stable <b>6-membered cyclohexanone ring</b>!</li>
-</ul>
-
-<h3>6.2 Oxidative Cleavage of Vicinal Diols by Periodic Acid (HIO<sub>4</sub>) or Lead Tetraacetate [Pb(OAc)<sub>4</sub>]</h3>
-<ul>
-    <li><b>Condition:</b> Must be a <b>1,2-diol (vicinal diol)</b>, &alpha;-hydroxy aldehyde/ketone, or 1,2-diketone (capable of forming a cyclic periodate ester; therefore, <b><i>trans</i>-1,2-diols in rigid bicyclic/diaxial systems do NOT cleave!</b>).</li>
-    <li><b>Shortcut Trick to Find Products &amp; Moles of HIO<sub>4</sub> Consumed:</b>
-        <ol>
-            <li>Every C&ndash;C bond between two adjacent carbons bearing &ndash;OH (or =O) consumes <b>1 mole of HIO<sub>4</sub></b>.</li>
-            <li>Break that C&ndash;C bond and attach one <b>&ndash;OH</b> to each broken end. Dehydrate any resulting gem-diols!</li>
-        </ol>
-        <div class="rxn">
-        &bull; &ndash;CH<sub>2</sub>(OH) (Primary alcohol end) &xrightarrow{HIO<sub>4</sub>} HCHO (Formaldehyde)<br>
-        &bull; &ndash;CH(OH)&ndash;R (Secondary alcohol end) &xrightarrow{HIO<sub>4</sub>} R&ndash;CHO (Aldehyde)<br>
-        &bull; &ndash;C(OH)R<sub>2</sub> (Tertiary alcohol end) &xrightarrow{HIO<sub>4</sub>} R<sub>2</sub>C=O (Ketone)<br>
-        &bull; &ndash;CH(OH)&ndash; (Middle carbon flanked by two &ndash;CH(OH)&ndash; groups, e.g., Glycerol / Glucose) &xrightarrow{HIO<sub>4</sub>} HCOOH (Formic Acid)
+            <!-- Search & Active Recall Controls -->
+            <div class="flex items-center space-x-3">
+                <div class="relative">
+                    <input type="text" id="reagentSearch" placeholder="Filter reagent / name rxn..." 
+                        class="w-48 sm:w-60 bg-slate-900/90 text-xs text-slate-200 placeholder-slate-500 rounded-xl px-3.5 py-2 border border-slate-700/80 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+                </div>
+                <button id="toggleRecallBtn" onclick="toggleActiveRecall()" 
+                    class="flex items-center space-x-2 text-xs font-semibold px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-indigo-600/20 text-slate-300 hover:text-indigo-300 border border-slate-700 hover:border-indigo-500/40 transition shadow-sm">
+                    <span id="recallDot" class="w-2 h-2 rounded-full bg-slate-500"></span>
+                    <span>Active Recall Blur</span>
+                </button>
+            </div>
         </div>
-        <i>Example:</i> <b>Glycerol [CH<sub>2</sub>(OH)&ndash;CH(OH)&ndash;CH<sub>2</sub>(OH)]</b> + <b>2 HIO<sub>4</sub></b> &rarr; <b>2 HCHO + 1 HCOOH</b> + 2 HIO<sub>3</sub> + H<sub>2</sub>O.
-    </li>
-</ul>
+    </header>
 
-<h3>6.3 Ring-Opening of Epoxides (Oxiranes) &ndash; Regioselectivity &amp; Stereochemistry</h3>
-<p>Both acidic and basic ring openings of epoxides proceed with <b>100% Anti-attack (Inversion of configuration at the attacked carbon)</b>, but the <i>site of nucleophilic attack</i> flips completely:</p>
-<table>
-    <thead>
-        <tr>
-            <th>Condition</th>
-            <th>Reagents</th>
-            <th>Which Carbon Does Nucleophile Attack?</th>
-            <th>Reason</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><b>Basic / Neutral Medium</b> (Pure S<sub>N</sub>2)</td>
-            <td>R&ndash;O<sup>&minus;</sup> / ROH, OH<sup>&minus;</sup>, RMgX, LiAlH<sub>4</sub>, CN<sup>&minus;</sup></td>
-            <td><b>LESS Substituted (Less Sterically Hindered) Carbon</b></td>
-            <td>Pure <b>steric control</b> (standard S<sub>N</sub>2 backside attack).</td>
-        </tr>
-        <tr>
-            <td><b>Acidic Medium</b> (Borderline S<sub>N</sub>2 / S<sub>N</sub>1-like)</td>
-            <td>H<sup>+</sup> / ROH, H<sub>3</sub>O<sup>+</sup>, HBr</td>
-            <td><b>MORE Substituted Carbon</b> (3&deg; or Benzylic &gt; 2&deg; &gt; 1&deg;)</td>
-            <td>Protonation of epoxide oxygen creates a strong <b>partial positive charge (&delta;<sup>+</sup>)</b> on the more substituted carbon in the transition state (electronic control).</td>
-        </tr>
-    </tbody>
-</table>
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12" id="mainContainer">
 
-<!-- ===================================================================== -->
-<!-- SECTION 7 -->
-<!-- ===================================================================== -->
-<h2>SECTION 7: Commercially Important Alcohols (NCERT Board Section)</h2>
-
-<h3>7.1 Methanol (CH<sub>3</sub>OH &ndash; "Wood Spirit")</h3>
-<ul>
-    <li><b>Why called Wood Spirit?</b> Originally produced by the destructive distillation of wood.</li>
-    <li><b>Modern Industrial Preparation (Catalytic Hydrogenation of Water Gas / Syngas):</b>
-        <div class="rxn">CO + 2H<sub>2</sub> &xrightarrow{ZnO&ndash;Cr<sub>2</sub>O<sub>3</sub>, 200&ndash;300 atm, 573&ndash;673 K} CH<sub>3</sub>OH</div>
-    </li>
-    <li><b>Toxicity (Board 1-Mark Q):</b> Drinking even small quantities of methanol causes <b>blindness</b>, and larger quantities cause death. Inside the liver, methanol is oxidized to <b>methanal (formaldehyde)</b>, which rapidly reacts with cellular proteins and causes the <b>protoplasm to coagulate</b> (just like an egg coagulates on cooking).</li>
-</ul>
-
-<h3>7.2 Ethanol (C<sub>2</sub>H<sub>5</sub>OH &ndash; "Grain Alcohol")</h3>
-<ul>
-    <li><b>Commercial Preparation by Fermentation of Molasses / Cane Sugar:</b>
-        <div class="rxn">
-        1. C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> (Sucrose) + H<sub>2</sub>O &xrightarrow{Invertase (from Yeast)} C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (Glucose) + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (Fructose)<br>
-        2. C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (Glucose / Fructose) &xrightarrow{Zymase (from Yeast)} 2 C<sub>2</sub>H<sub>5</sub>OH (Ethanol) + 2 CO<sub>2</sub>&uarr;
+        <!-- Hero Stats Banner -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass-card p-4 rounded-2xl border-l-4 border-l-indigo-500">
+                <div class="text-xs text-slate-400 font-medium">Total Reagents Indexed</div>
+                <div class="text-2xl font-bold text-white mt-1 font-mono">55+ Reagents</div>
+                <div class="text-[11px] text-indigo-400 mt-1">100% NCERT + JEE Adv Coverage</div>
+            </div>
+            <div class="glass-card p-4 rounded-2xl border-l-4 border-l-emerald-500">
+                <div class="text-xs text-slate-400 font-medium">Stereochemistry Focus</div>
+                <div class="text-2xl font-bold text-white mt-1 font-mono">Syn / Anti / SNi</div>
+                <div class="text-[11px] text-emerald-400 mt-1">OMDM, HBO, Darzen's & Epoxides</div>
+            </div>
+            <div class="glass-card p-4 rounded-2xl border-l-4 border-l-amber-500">
+                <div class="text-xs text-slate-400 font-medium">Classic PYQ Traps</div>
+                <div class="text-2xl font-bold text-white mt-1 font-mono">28+ Edge Cases</div>
+                <div class="text-[11px] text-amber-400 mt-1">Cu/573K, Anisole+HI, Williamson</div>
+            </div>
+            <div class="glass-card p-4 rounded-2xl border-l-4 border-l-rose-500">
+                <div class="text-xs text-slate-400 font-medium">Study Mode</div>
+                <div class="text-sm font-bold text-white mt-1">Click Blurred Cells</div>
+                <div class="text-[11px] text-rose-400 mt-1">Toggle "Active Recall Blur" above</div>
+            </div>
         </div>
-        <ul>
-            <li><b>Conditions for Fermentation:</b> Temperature ~298&ndash;303 K, <b>anaerobic conditions (absence of air/O<sub>2</sub>)</b>. If air gets in, ethanol is oxidized to ethanoic acid (vinegar) by <i>Acetobacter</i> bacteria, ruining the taste of alcoholic drinks!</li>
-            <li><b>Concentration Limit:</b> Zymase enzyme gets inhibited once ethanol concentration exceeds <b>~14%</b>.</li>
-        </ul>
-    </li>
-    <li><b>Important Industrial Terms:</b>
-        <ul>
-            <li><b>Rectified Spirit:</b> 95.5% Ethanol + 4.5% Water (constant-boiling azeotropic mixture).</li>
-            <li><b>Absolute Alcohol:</b> 100% Pure Ethanol.</li>
-            <li><b>Power Alcohol:</b> 20% Ethanol + 80% Petrol (with benzene as co-solvent) used as motor fuel.</li>
-            <li><b>Denaturation of Alcohol (Board Favorite):</b> Commercial ethanol is made unfit for human consumption by adding <b>Copper Sulphate (CuSO<sub>4</sub>)</b> (to give it a blue color) and <b>Pyridine</b> (a foul-smelling liquid) or methanol. This is called <b>denatured alcohol (methylated spirit)</b>.</li>
-        </ul>
-    </li>
-</ul>
 
-<!-- ===================================================================== -->
-<!-- SECTION 8 -->
-<!-- ===================================================================== -->
-<h2>SECTION 8: Distinguishing Chemical Tests &amp; Rapid Revision Cheat-Sheet</h2>
+        <!-- ==========================================
+             PART 1: ALCOHOLS (R-OH)
+             ========================================== -->
+        <section id="part1-prep" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">Part 01 // Section A</span>
+                    <h2 class="text-2xl font-bold text-white mt-0.5">Preparation of Alcohols (R–OH): Reagent Master Table</h2>
+                </div>
+                <span class="badge-indigo text-xs font-mono px-3 py-1 rounded-lg">10 Core Pathways</span>
+            </div>
 
-<h3>8.1 Complete Chemical Distinguishing Tests Table</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Test Name</th>
-            <th>Reagent</th>
-            <th>Positive Observation</th>
-            <th>Compounds That Give Positive Test</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><b>1. Lucas Test</b></td>
-            <td>Conc. HCl + Anhydrous ZnCl<sub>2</sub></td>
-            <td>White turbidity / oily layer of R&ndash;Cl:<br>&bull; <b>3&deg; / Benzyl / Allyl:</b> Immediate<br>&bull; <b>2&deg;:</b> In 5 mins<br>&bull; <b>1&deg;:</b> None at room temp</td>
-            <td>Distinguishes 1&deg;, 2&deg;, and 3&deg; alcohols (up to 6 carbons).</td>
-        </tr>
-        <tr>
-            <td><b>2. Neutral FeCl<sub>3</sub> Test</b></td>
-            <td>Freshly prepared neutral aqueous FeCl<sub>3</sub></td>
-            <td><b>Violet, Blue, or Purple coloration</b> due to formation of [(C<sub>6</sub>H<sub>5</sub>O)<sub>6</sub>Fe]<sup>3&minus;</sup> complex</td>
-            <td><b>Phenols</b> (and Enols).<br><i>(Alcohols do NOT give this test!).</i></td>
-        </tr>
-        <tr>
-            <td><b>3. Iodoform (Haloform) Test</b></td>
-            <td>I<sub>2</sub> + aq. NaOH (or NaOI, warm)</td>
-            <td><b>Bright Yellow Precipitate</b> of Iodoform (<b>CHI<sub>3</sub></b>) with antiseptic smell</td>
-            <td>Alcohols containing the <b>CH<sub>3</sub>&ndash;CH(OH)&ndash;R</b> group (where R = H, Alkyl, or Aryl):<br>&bull; <b>Ethanol</b> (Only 1&deg; alcohol!)<br>&bull; <b>All Methyl-carbinols (2&deg; alcohols with &ndash;CH(OH)CH<sub>3</sub>)</b> like Propan-2-ol, Butan-2-ol, 1-Phenylethanol.<br><i>(Methanol, Propan-1-ol, and Phenol do NOT give this test!).</i></td>
-        </tr>
-        <tr>
-            <td><b>4. Victor Meyer's Test</b> <span class="badge badge-jee">JEE</span></td>
-            <td>1. Red P + I<sub>2</sub><br>2. AgNO<sub>2</sub><br>3. HNO<sub>2</sub> (NaNO<sub>2</sub> + HCl)<br>4. Aq. KOH</td>
-            <td><b>R &ndash; B &ndash; C Color Code:</b><br>&bull; <b>1&deg; Alcohol:</b> <b>R</b>ed color (Nitrolic acid salt)<br>&bull; <b>2&deg; Alcohol:</b> <b>B</b>lue color (Pseudonitrole)<br>&bull; <b>3&deg; Alcohol:</b> <b>C</b>olorless (No reaction with HNO<sub>2</sub>)</td>
-            <td>Distinguishes 1&deg;, 2&deg;, and 3&deg; alcohols cleanly.</td>
-        </tr>
-        <tr>
-            <td><b>5. Bromine Water Test</b></td>
-            <td>Br<sub>2</sub> / H<sub>2</sub>O</td>
-            <td>Decolorization of reddish-brown bromine water + <b>White Precipitate</b> of 2,4,6-tribromophenol</td>
-            <td><b>Phenol</b> (and Aniline).<br><i>(Alcohols and Ethers do not react).</i></td>
-        </tr>
-        <tr>
-            <td><b>6. Sodium Bicarbonate Test</b></td>
-            <td>Aqueous NaHCO<sub>3</sub></td>
-            <td>Brisk effervescence of <b>CO<sub>2</sub> gas</b></td>
-            <td><b>Carboxylic Acids &amp; Picric Acid</b> (2,4,6-Trinitrophenol).<br><i>(Normal Phenols and Alcohols do NOT evolve CO<sub>2</sub>!).</i></td>
-        </tr>
-        <tr>
-            <td><b>7. Liebermann's Nitroso Test</b> <span class="badge badge-jee">JEE</span></td>
-            <td>NaNO<sub>2</sub> + Conc. H<sub>2</sub>SO<sub>4</sub> &rarr; Dilute with H<sub>2</sub>O &rarr; Add excess NaOH</td>
-            <td>Color changes: <b>Blue/Green &rarr; Red (on dilution) &rarr; Deep Blue (on adding NaOH)</b></td>
-            <td><b>Phenol</b> (having a free <i>para</i> position).</td>
-        </tr>
-        <tr>
-            <td><b>8. Ceric Ammonium Nitrate (CAN) Test</b></td>
-            <td>(NH<sub>4</sub>)<sub>2</sub>[Ce(NO<sub>3</sub>)<sub>6</sub>]</td>
-            <td>Yellow solution turns <b>Red / Pink</b></td>
-            <td>Alcohols (1&deg;, 2&deg;, 3&deg;).</td>
-        </tr>
-    </tbody>
-</table>
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-900/90 border-b border-slate-800 text-xs uppercase font-mono text-slate-400">
+                                <th class="py-3.5 px-4 w-1/6">Starting Material</th>
+                                <th class="py-3.5 px-4 w-1/5">Reagent Used</th>
+                                <th class="py-3.5 px-4 w-1/4">Product & Stereochemistry</th>
+                                <th class="py-3.5 px-4">Mechanism / JEE Trap & PYQ Insights</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/70 text-sm">
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">Alkene</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">dil. H₂SO₄ / H₂O</span> or <span class="chem-code">H₃O⁺</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-medium">Markovnikov Alcohol (Racemic if chiral)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-amber-400">Carbocation intermediate.</strong> Watch out for <strong>1,2-hydride, 1,2-methyl, or ring-expansion rearrangements</strong> before H₂O attacks!</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">Alkene <span class="block text-xs text-indigo-400 font-mono">(OMDM)</span></td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. Hg(OAc)₂, H₂O/THF</span><br><span class="chem-code mt-1 inline-block">2. NaBH₄, OH⁻</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-medium">Markovnikov Alcohol (<strong>Anti</strong>-addition predominantly)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-indigo-300">Oxymercuration-Demercuration:</strong> Cyclic mercurinium ion intermediate. <strong class="text-emerald-400">ZERO rearrangement.</strong> <span class="text-amber-300">JEE Adv Isotopic Trap:</span> H₂O provides the <strong>–OH</strong>, and NaBH₄ provides the <strong>–H</strong> (tested via D₂O / NaBD₄).</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">Alkene <span class="block text-xs text-indigo-400 font-mono">(HBO)</span></td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. BH₃·THF (or B₂H₆)</span><br><span class="chem-code mt-1 inline-block">2. H₂O₂, OH⁻</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-medium"><strong>Anti-Markovnikov</strong> Alcohol (<strong>Syn</strong>-addition)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-indigo-300">Hydroboration-Oxidation:</strong> 4-membered cyclic transition state. <strong class="text-emerald-400">ZERO rearrangement.</strong> BH₃ supplies –H to more substituted C; H₂O₂ supplies –OH to less substituted C.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">Aldehyde / Ketone</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">NaBH₄</span> in MeOH or EtOH</td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-medium">1° or 2° Alcohol</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Mild reducing agent. <strong class="text-amber-400">Reduces ONLY:</strong> Aldehydes, Ketones, and <strong>Acid Chlorides (–COCl)</strong>. Does NOT reduce esters, carboxylic acids, amides, –NO₂, or isolated C=C bonds.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">Aldehyde, Ketone, Acid, Ester, Acid Chloride, Epoxide</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. LiAlH₄ (dry ether)</span><br><span class="chem-code mt-1 inline-block">2. H₃O⁺</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-medium">Alcohols (Amides/Nitriles give Amines)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Powerful hydride donor. Does NOT reduce isolated C=C, <strong class="text-rose-400">EXCEPT in Cinnamyl systems:</strong> <span class="font-mono text-xs">Ph–CH=CH–CHO/COOH/COOR → Ph–CH₂–CH₂–CH₂OH</span>.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">Carboxylic Acid</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. B₂H₆ / THF</span><br><span class="chem-code mt-1 inline-block">2. H₃O⁺</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-medium">1° Alcohol (R–CH₂OH)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-amber-400">Chemoselective JEE Favourite:</strong> B₂H₆ reduces –COOH selectively even in the presence of esters, –NO₂, or halo groups!</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">Carbonyls / Esters / Epoxides</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. R–MgX (Grignard)</span><br><span class="chem-code mt-1 inline-block">2. H₃O⁺ or NH₄Cl(aq)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-medium text-xs space-y-1">
+                                    <div>• HCHO → 1° Alcohol</div>
+                                    <div>• R'CHO → 2° Alcohol</div>
+                                    <div>• R'COR'' → 3° Alcohol</div>
+                                    <div>• Ester/Acid Halide (2 eq) → 3° Alcohol</div>
+                                </td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Nucleophilic addition. With <strong>unsymmetrical epoxides</strong>, RMgX attacks the <strong>less sterically hindered carbon</strong> (S<sub>N</sub>2 path). Quench with NH₄Cl(aq) to prevent dehydration of sensitive 3° alcohols.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">α,β-Unsaturated Carbonyl</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">NaBH₄ + CeCl₃·7H₂O</span><br><span class="text-xs text-indigo-400">(Luche Reduction)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-medium">Allylic Alcohol (1,2-addition product exclusively)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Prevents 1,4-conjugate reduction. Cleanly converts <span class="font-mono text-xs">C=C–C=O → C=C–CH–OH</span>.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">1° Aliphatic Amine</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">NaNO₂ + dil. HCl</span><br><span class="text-xs text-slate-400">(0–5°C)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-medium">Mixture of Alcohol + Alkene + Alkyl Chloride</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Forms unstable aliphatic diazonium salt (<span class="font-mono text-xs">R–N₂⁺Cl⁻</span>) which loses N₂ to form a <strong>carbocation</strong> (rearrangements + ring expansions occur!). <strong class="text-rose-400">Exception:</strong> <span class="font-mono text-xs">CH₃NH₂ + HNO₂ → CH₃–O–CH₃ + CH₃ONO</span>.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">Alkyl Halide (R–X)</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">aq. KOH</span> / <span class="chem-code">aq. NaOH</span> or <span class="chem-code">Moist Ag₂O</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-medium">Alcohol (R–OH)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">S<sub>N</sub>2 for 1°, S<sub>N</sub>1 for 3°. <strong class="text-amber-400">Trap:</strong> <strong>Dry Ag₂O</strong> gives <strong>Ether (R–O–R)</strong>!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-<h3>8.2 How to Distinguish Common Pairs in 1 Sentence (Board 2-Mark Ready Answers)</h3>
-<ul>
-    <li><b>Propan-1-ol vs. Propan-2-ol:</b>
-        <ul>
-            <li><i>By Iodoform Test:</i> Propan-2-ol has a CH<sub>3</sub>CH(OH)&ndash; group and gives a yellow precipitate of CHI<sub>3</sub> on warming with I<sub>2</sub>/NaOH; Propan-1-ol does not.</li>
-            <li><i>By Lucas Test:</i> Propan-2-ol (2&deg;) gives turbidity within 5 minutes with conc. HCl + anhyd. ZnCl<sub>2</sub>; Propan-1-ol (1&deg;) gives no turbidity at room temperature.</li>
-        </ul>
-    </li>
-    <li><b>Methanol vs. Ethanol:</b> Ethanol gives a yellow precipitate of CHI<sub>3</sub> in the <b>Iodoform test</b> (I<sub>2</sub> + NaOH); Methanol does not.</li>
-    <li><b>Phenol vs. Ethanol (or Cyclohexanol / Benzyl alcohol):</b> Phenol gives a <b>violet coloration with neutral FeCl<sub>3</sub></b> (and a white ppt with Bromine water); Ethanol/Cyclohexanol/Benzyl alcohol does not.</li>
-    <li><b>Phenol vs. Benzoic Acid:</b> Benzoic acid gives <b>brisk effervescence of CO<sub>2</sub> with aq. NaHCO<sub>3</sub></b>; Phenol does not react with NaHCO<sub>3</sub>.</li>
-</ul>
+        <!-- ==========================================
+             PART 1B: REACTIONS OF ALCOHOLS
+             ========================================== -->
+        <section id="part1-rxn" class="space-y-8">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">Part 01 // Section B</span>
+                    <h2 class="text-2xl font-bold text-white mt-0.5">Reactions & Properties of Alcohols</h2>
+                </div>
+                <span class="badge-emerald text-xs font-mono px-3 py-1 rounded-lg">Halogenation • Dehydration • Oxidation</span>
+            </div>
 
-<footer style="margin-top: 45px; padding-top: 15px; border-top: 2px solid #cbd5e1; text-align: center; color: #64748b; font-size: 0.9rem;">
-    End of Chapter Notes &bull; Alcohols, Phenols and Ethers &bull; Prepared for Class 12 Boards &amp; JEE
-</footer>
+            <!-- 1. Replacement of -OH by Halide -->
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <div class="bg-slate-900/90 px-5 py-3 border-b border-slate-800 flex items-center justify-between">
+                    <h3 class="font-bold text-indigo-300 text-sm uppercase tracking-wider font-mono">A. Replacement of –OH by Halide (R–OH → R–X)</h3>
+                    <span class="text-xs text-slate-400">Stereochemistry & Rearrangement Matrix</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-800 text-xs uppercase font-mono text-slate-400 bg-slate-900/40">
+                                <th class="py-3 px-4 w-1/4">Reagent</th>
+                                <th class="py-3 px-4 w-1/5">Product</th>
+                                <th class="py-3 px-4 w-1/5">Mechanism & Stereo</th>
+                                <th class="py-3 px-4">JEE Trap / Critical Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/70 text-sm">
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">Lucas Reagent:<br><span class="chem-code mt-1 inline-block">conc. HCl + anhyd. ZnCl₂</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">Alkyl Chloride (R–Cl)</td>
+                                <td class="py-3.5 px-4 recall-target"><span class="badge-amber px-2 py-0.5 rounded text-xs font-mono">S<sub>N</sub>1 (Racemization + Rearrangement)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300 text-xs space-y-1">
+                                    <div>• <strong class="text-emerald-400">3°, Allylic, Benzylic:</strong> Immediate turbidity (white ppt).</div>
+                                    <div>• <strong class="text-amber-400">2° Alcohol:</strong> Turbidity in 5–10 min.</div>
+                                    <div>• <strong class="text-rose-400">1° Alcohol:</strong> No turbidity at room temp (only on heating).</div>
+                                </td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white"><span class="chem-code">SOCl₂</span> (Thionyl Chloride) <strong>alone</strong></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">R–Cl + SO₂↑ + HCl↑</td>
+                                <td class="py-3.5 px-4 recall-target"><span class="badge-emerald px-2 py-0.5 rounded text-xs font-mono">S<sub>N</sub>i (Retention)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Intimate ion pair collapses from the front side. Both byproducts (SO₂, HCl) are escapable gases → best method for pure R–Cl.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white"><span class="chem-code">SOCl₂ + Pyridine</span><br><span class="text-xs text-indigo-400">(Darzen's Process)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">R–Cl + SO₂↑ + PyH⁺Cl⁻</td>
+                                <td class="py-3.5 px-4 recall-target"><span class="badge-indigo px-2 py-0.5 rounded text-xs font-mono">S<sub>N</sub>2 (Inversion)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Pyridine neutralizes HCl generating free nucleophilic Cl⁻, which attacks from the backside (Inversion!).</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white"><span class="chem-code">PCl₅</span> or <span class="chem-code">PCl₃ / PBr₃ / Red P + I₂</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">R–Cl / R–Br / R–I</td>
+                                <td class="py-3.5 px-4 recall-target"><span class="badge-indigo px-2 py-0.5 rounded text-xs font-mono">S<sub>N</sub>2 (Inversion)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-emerald-400">No carbocation rearrangement</strong> (unlike HX). Contrast Neopentyl alcohol: <span class="font-mono text-xs">(CH₃)₃C–CH₂OH + HBr → rearranged 3° bromide</span>, whereas <span class="font-mono text-xs">+ PBr₃ → unrearranged 1° bromide</span>.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white"><span class="chem-code">NaBr + conc. H₂SO₄</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">R–Br</td>
+                                <td class="py-3.5 px-4 recall-target">S<sub>N</sub>2 (1°) / S<sub>N</sub>1 (2°/3°)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-rose-400">Trap:</strong> You CANNOT use <span class="font-mono text-xs">NaI + conc. H₂SO₄</span> to make R–I because H₂SO₄ oxidizes HI to I₂. Use <span class="chem-code">KI + 95% H₃PO₄</span> instead!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
+            <!-- 2. Dehydration & Oxidation Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Dehydration Card -->
+                <div class="glass-card rounded-2xl overflow-hidden">
+                    <div class="bg-slate-900/90 px-5 py-3 border-b border-slate-800">
+                        <h3 class="font-bold text-amber-400 text-sm uppercase tracking-wider font-mono">B. Dehydration of Alcohols</h3>
+                    </div>
+                    <div class="p-5 space-y-4 text-sm">
+                        <div class="searchable-row p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <div class="flex justify-between items-start">
+                                <span class="chem-code">conc. H₂SO₄ at 170°C (443 K)</span>
+                                <span class="badge-amber text-xs font-mono px-2 py-0.5 rounded">E1 Mechanism</span>
+                            </div>
+                            <p class="mt-2 text-slate-300 recall-target">Gives <strong>Saytzeff (Zaitsev) Alkene</strong> (more substituted, <em>trans > cis</em>). Rate ∝ Carbocation stability (3° > 2° > 1°). Ring expansion & 1,2-shifts ALWAYS occur if a more stable cation can form.</p>
+                        </div>
+                        <div class="searchable-row p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <div class="flex justify-between items-start">
+                                <span class="chem-code">conc. H₂SO₄ at 140°C (413 K)</span>
+                                <span class="badge-indigo text-xs font-mono px-2 py-0.5 rounded">S<sub>N</sub>2 (1° Only)</span>
+                            </div>
+                            <p class="mt-2 text-slate-300 recall-target">Gives <strong>Symmetrical Ether (R–O–R)</strong> with excess 1° alcohol. 2° and 3° alcohols still give alkenes via E1!</div>
+                        <div class="searchable-row p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <div class="flex justify-between items-start">
+                                <span class="chem-code">ThO₂ (Thorium Oxide), Δ</span>
+                                <span class="badge-emerald text-xs font-mono px-2 py-0.5 rounded">Hofmann Alkene</span>
+                            </div>
+                            <p class="mt-2 text-slate-300 recall-target">Gives <strong>less substituted (Hofmann) alkene</strong> without carbocation rearrangement.</p>
+                        </div>
+                        <div class="searchable-row p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <div class="flex justify-between items-start">
+                                <span class="chem-code">POCl₃ + Pyridine, 0°C</span>
+                                <span class="badge-indigo text-xs font-mono px-2 py-0.5 rounded">E2 (Anti-Elimination)</span>
+                            </div>
+                            <p class="mt-2 text-slate-300 recall-target">Clean E2 dehydration — <strong>ZERO carbocation rearrangement</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pinacol & Victor Meyer Card -->
+                <div class="glass-card rounded-2xl overflow-hidden">
+                    <div class="bg-slate-900/90 px-5 py-3 border-b border-slate-800">
+                        <h3 class="font-bold text-emerald-400 text-sm uppercase tracking-wider font-mono">C. Pinacol-Pinacolone & Victor Meyer Test</h3>
+                    </div>
+                    <div class="p-5 space-y-4 text-sm">
+                        <div class="searchable-row p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-white">Pinacol–Pinacolone Rearrangement</span>
+                                <span class="chem-code">Vicinal Diol + conc. H₂SO₄, Δ</span>
+                            </div>
+                            <div class="text-slate-300 text-xs space-y-1.5 recall-target">
+                                <p>1. Protonate & remove the –OH that leaves the <strong>most stable carbocation</strong> (<span class="font-mono">Ph₂C⁺ > Ph(Me)C⁺ > Me₂C⁺</span>).</p>
+                                <p>2. 1,2-Shift driven by back-donation of remaining oxygen's lone pair (<span class="font-mono">C=O⁺H</span> octet completion).</p>
+                                <p class="text-amber-300 font-mono">Migratory Aptitude: –H > –Aryl (EDG) > –Phenyl > –Aryl (EWG) > 3° Alkyl > 2° Alkyl > 1° Alkyl > –CH₃</p>
+                                <p class="text-rose-400"><strong>Semi-Pinacol Trap:</strong> With <span class="font-mono">C(OH)–C(NH₂) + HNO₂</span>, –NH₂ ALWAYS leaves as N₂ regardless of carbocation stability!</p>
+                            </div>
+                        </div>
+
+                        <div class="searchable-row p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-white">Victor Meyer Test (RBC Test)</span>
+                                <span class="chem-code">P+I₂ → AgNO₂ → HNO₂ → KOH</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 pt-1 text-center text-xs recall-target">
+                                <div class="p-2 rounded-lg bg-rose-500/15 border border-rose-500/30">
+                                    <div class="font-bold text-rose-400">1° Alcohol</div>
+                                    <div class="text-slate-300 mt-0.5">Nitrolic Acid</div>
+                                    <div class="font-mono text-rose-300 font-bold mt-1">BLOOD RED</div>
+                                </div>
+                                <div class="p-2 rounded-lg bg-indigo-500/15 border border-indigo-500/30">
+                                    <div class="font-bold text-indigo-400">2° Alcohol</div>
+                                    <div class="text-slate-300 mt-0.5">Pseudonitrole</div>
+                                    <div class="font-mono text-indigo-300 font-bold mt-1">BLUE</div>
+                                </div>
+                                <div class="p-2 rounded-lg bg-slate-800 border border-slate-700">
+                                    <div class="font-bold text-slate-300">3° Alcohol</div>
+                                    <div class="text-slate-400 mt-0.5">No α-H rxn</div>
+                                    <div class="font-mono text-slate-400 font-bold mt-1">COLOURLESS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Oxidation of Alcohols Table -->
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <div class="bg-slate-900/90 px-5 py-3 border-b border-slate-800 flex items-center justify-between">
+                    <h3 class="font-bold text-indigo-300 text-sm uppercase tracking-wider font-mono">D. Oxidation of Alcohols (High-Yield JEE Section)</h3>
+                    <span class="text-xs text-amber-400 font-mono">Watch the Cu/573K 3° Alcohol Trap!</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-800 text-xs uppercase font-mono text-slate-400 bg-slate-900/40">
+                                <th class="py-3 px-4 w-1/4">Oxidizing Agent</th>
+                                <th class="py-3 px-4">1° Alcohol (RCH₂OH)</th>
+                                <th class="py-3 px-4">2° Alcohol (R₂CHOH)</th>
+                                <th class="py-3 px-4">3° Alcohol (R₃COH)</th>
+                                <th class="py-3 px-4 w-1/3">Special Selectivity & Traps</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/70 text-sm">
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white"><span class="chem-code">PCC</span> or <span class="chem-code">PDC</span> or <span class="chem-code">CrO₃·2Py</span> (in CH₂Cl₂)</td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-semibold">Aldehyde (R–CHO)</td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">Ketone (R₂C=O)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-500">No reaction</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Anhydrous medium prevents gem-diol formation → stops cleanly at Aldehyde.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white">Jones Reagent:<br><span class="chem-code">CrO₃ + aq. H₂SO₄ / Acetone</span></td>
+                                <td class="py-3.5 px-4 recall-target text-amber-300 font-semibold">Carboxylic Acid (R–COOH)</td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">Ketone (R₂C=O)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-500">No reaction</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Spares isolated C=C double/triple bonds. Orange Cr(VI) turns <strong>Green Cr(III)</strong>.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white"><span class="chem-code">Cu or Ag at 300°C (573 K)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">Aldehyde (+ H₂↑)</td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">Ketone (+ H₂↑)</td>
+                                <td class="py-3.5 px-4 recall-target text-rose-400 font-bold">Alkene! (+ H₂O)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-rose-400">Classic JEE Trap:</strong> 3° alcohol over heated Cu undergoes <strong>dehydration (elimination)</strong> to an alkene, NOT oxidation!</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white"><span class="chem-code">MnO₂</span> (Activated)</td>
+                                <td class="py-3.5 px-4 recall-target text-indigo-300" colspan="2">Oxidizes <strong>ONLY Allylic & Benzylic</strong> 1°/2° –OH to Aldehyde/Ketone</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-500">No reaction</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Leaves regular saturated 1° and 2° –OH groups completely untouched!</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white"><span class="chem-code">HIO₄</span> (Periodic Acid) or <span class="chem-code">Pb(OAc)₄</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300" colspan="3">Cleaves <strong>Vicinal Diols (1,2-diols)</strong>, α-hydroxy carbonyls & 1,2-diketones</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300 text-xs">Each cleaved C–C bond adds an –OH to each C: <span class="font-mono">–CH(OH)– → –CHO</span>; <span class="font-mono">–C(OH)R– → –COR</span>; <span class="font-mono">–CHO → HCOOH</span>. Rigid <em>trans</em>-1,2-diaxial diols do NOT cleave!</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-semibold text-white"><span class="chem-code">I₂ + NaOH</span> (Haloform)</td>
+                                <td class="py-3.5 px-4 recall-target text-amber-300"><strong>Ethanol</strong> is the ONLY 1° alcohol that gives CHI₃↓</td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">Any <span class="font-mono text-xs">CH₃–CH(OH)–R</span> gives yellow ppt of CHI₃</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-500">Negative</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Gives bright yellow precipitate of <strong>Iodoform (CHI₃)</strong> + RCOONa.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PART 2: PHENOLS (Ar-OH)
+             ========================================== -->
+        <section id="part2-phenols" class="space-y-8">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">Part 02 // Aromatic Hub</span>
+                    <h2 class="text-2xl font-bold text-white mt-0.5">Phenols (Ar–OH): Preparation & Named Reactions</h2>
+                </div>
+                <span class="badge-emerald text-xs font-mono px-3 py-1 rounded-lg">Cumene • Reimer-Tiemann • Kolbe</span>
+            </div>
+
+            <!-- Phenol Preparation Table -->
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <div class="bg-slate-900/90 px-5 py-3 border-b border-slate-800">
+                    <h3 class="font-bold text-emerald-400 text-sm uppercase tracking-wider font-mono">1. Industrial & Lab Preparation of Phenols</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-800 text-xs uppercase font-mono text-slate-400 bg-slate-900/40">
+                                <th class="py-3 px-4 w-1/5">Method Name</th>
+                                <th class="py-3 px-4 w-1/6">Starting Material</th>
+                                <th class="py-3 px-4 w-1/4">Reagents & Conditions</th>
+                                <th class="py-3 px-4">Product(s) & JEE Takeaways</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/70 text-sm">
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-emerald-300">1. Cumene Process</td>
+                                <td class="py-3.5 px-4 text-white">Benzene + Propene</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. H₃PO₄, 250°C → Cumene</span><br><span class="chem-code mt-1 inline-block">2. O₂ (Air) → Hydroperoxide</span><br><span class="chem-code mt-1 inline-block">3. dil. H₂SO₄ (50–90°C)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-white">Phenol + Acetone (CH₃COCH₃)</strong>.<br><span class="text-amber-400">JEE Adv Mechanism:</span> Step 3 involves protonation of terminal –OH, loss of H₂O, and <strong>1,2-phenyl shift to electron-deficient oxygen</strong>!</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-emerald-300">2. Dow's Process</td>
+                                <td class="py-3.5 px-4 text-white">Chlorobenzene</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. aq. NaOH, 623 K, 300 atm</span><br><span class="chem-code mt-1 inline-block">2. H₃O⁺</span></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-white">Phenol</strong> via <strong>Benzyne intermediate</strong>. If –NO₂ groups are at <em>ortho/para</em>, proceeds via <strong>S<sub>N</sub>Ar Meisenheimer complex</strong> under mild conditions (warm H₂O suffices for picryl chloride!).</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-emerald-300">3. Benzene Sulphonic Acid</td>
+                                <td class="py-3.5 px-4 text-white">Benzene</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. Oleum (H₂S₂O₇)</span><br><span class="chem-code mt-1 inline-block">2. NaOH (fusion), 573–623 K</span><br><span class="chem-code mt-1 inline-block">3. H⁺</span></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-white">Phenol + Na₂SO₃</strong>.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-emerald-300">4. Diazonium Salt Hydrolysis</td>
+                                <td class="py-3.5 px-4 text-white">Aniline (Ph–NH₂)</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. NaNO₂ + HCl (0–5°C)</span><br><span class="chem-code mt-1 inline-block">2. Warm H₂O</span></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-white">Phenol + N₂↑ + HCl</strong> (Proceeds via aryl cation Ph⁺).</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-emerald-300">5. Dakin Oxidation</td>
+                                <td class="py-3.5 px-4 text-white">Salicylaldehyde or <em>p</em>-Hydroxyacetophenone</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. H₂O₂ + aq. NaOH</span><br><span class="chem-code mt-1 inline-block">2. H₃O⁺</span></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-white">Catechol</strong> (1,2-dihydroxybenzene) or <strong class="text-white">Hydroquinone</strong> (1,4-dihydroxybenzene) + HCOONa.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Reactions of Phenol Table -->
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <div class="bg-slate-900/90 px-5 py-3 border-b border-slate-800">
+                    <h3 class="font-bold text-emerald-400 text-sm uppercase tracking-wider font-mono">2. Named Reactions & Electrophilic Substitution of Phenols</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-800 text-xs uppercase font-mono text-slate-400 bg-slate-900/40">
+                                <th class="py-3 px-4 w-1/5">Reaction Name</th>
+                                <th class="py-3 px-4 w-1/4">Reagent & Conditions</th>
+                                <th class="py-3 px-4 w-1/5">Product</th>
+                                <th class="py-3 px-4">Electrophile & JEE Trap</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/70 text-sm">
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-white">Reimer–Tiemann Reaction</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. CHCl₃ + aq. NaOH (340 K)</span><br><span class="chem-code mt-1 inline-block">2. H₃O⁺</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-semibold">Salicylaldehyde (<em>o</em>-isomer Major)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-amber-400">Electrophile: Dichlorocarbene (:CCl₂)</strong> (neutral, 6 valence e⁻). <em>Ortho</em> major due to intramolecular H-bonding.<br><strong class="text-rose-400">Trap:</strong> Using <span class="chem-code">CCl₄ + NaOH</span> gives <strong>Salicylic Acid</strong>!</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-white">Kolbe–Schmitt Reaction</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">1. NaOH → PhONa</span><br><span class="chem-code mt-1 inline-block">2. CO₂ (400 K, 4–7 atm)</span><br><span class="chem-code mt-1 inline-block">3. H₃O⁺</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300 font-semibold">Salicylic Acid (<em>o</em>-Hydroxybenzoic acid Major)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><strong class="text-amber-400">Electrophile: CO₂</strong>. <strong class="text-rose-400">Trap:</strong> Using <strong>KOH</strong> instead of NaOH gives the <strong><em>para</em>-isomer</strong> as major because larger K⁺ cannot chelate the <em>ortho</em> transition state!</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-white">Bromination (Polar vs Non-Polar)</td>
+                                <td class="py-3.5 px-4">• <span class="chem-code">Br₂ + H₂O</span> (Polar)<br>• <span class="chem-code mt-1 inline-block">Br₂ in CS₂ / CHCl₃</span> (273 K)</td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">• <strong>2,4,6-Tribromophenol</strong> (White ppt)<br>• <strong><em>p</em>-Bromophenol</strong> (Major)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">In H₂O, phenol ionizes to strongly activating <strong>PhO⁻</strong>. <strong class="text-rose-400">Ipso Trap:</strong> Salicylic acid + Br₂/H₂O undergoes decarboxylation to STILL give 2,4,6-tribromophenol!</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-white">Nitration (Dilute vs Conc.)</td>
+                                <td class="py-3.5 px-4">• <span class="chem-code">dil. HNO₃ (298 K)</span><br>• <span class="chem-code mt-1 inline-block">conc. HNO₃ + conc. H₂SO₄</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">• <em>o</em>- & <em>p</em>-Nitrophenol<br>• <strong>Picric Acid</strong> (2,4,6-Trinitrophenol)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300"><em>o</em>-Nitrophenol has <strong>intramolecular H-bonding</strong> (steam volatile, lower b.p.); separated from <em>p</em>-isomer by <strong>steam distillation</strong>.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-white">Zinc Dust / Oxidation</td>
+                                <td class="py-3.5 px-4">• <span class="chem-code">Zn dust, Δ</span><br>• <span class="chem-code mt-1 inline-block">Na₂Cr₂O₇ + conc. H₂SO₄</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">• <strong>Benzene (C₆H₆)</strong> + ZnO<br>• <strong><em>p</em>-Benzoquinone</strong></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Deoxygenation with Zn dust vs oxidation to conjugated 1,4-diketone with chromic acid.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-white">Salicylic Acid Esterification</td>
+                                <td class="py-3.5 px-4">• <span class="chem-code">(CH₃CO)₂O / H⁺</span><br>• <span class="chem-code mt-1 inline-block">CH₃OH / H₂SO₄</span><br>• <span class="chem-code mt-1 inline-block">PhOH / POCl₃</span></td>
+                                <td class="py-3.5 px-4 recall-target text-emerald-300">• <strong>Aspirin</strong><br>• <strong>Oil of Wintergreen</strong><br>• <strong>Salol</strong></td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Aspirin = Acetylsalicylic acid; Wintergreen = Methyl salicylate; Salol = Phenyl salicylate.</td>
+                            </tr>
+                            <tr class="searchable-row hover:bg-slate-800/30 transition">
+                                <td class="py-3.5 px-4 font-bold text-white">Azo Dye Coupling</td>
+                                <td class="py-3.5 px-4"><span class="chem-code">Ph–N₂⁺Cl⁻ at pH 9–10</span><br><span class="text-xs text-slate-400">(0–5°C, mildly alkaline)</span></td>
+                                <td class="py-3.5 px-4 recall-target text-amber-400 font-bold"><em>p</em>-Hydroxyazobenzene (Orange Dye)</td>
+                                <td class="py-3.5 px-4 recall-target text-slate-300">Mild base converts PhOH to reactive PhO⁻. If pH > 11, PhN₂⁺ forms unreactive diazotate (<span class="font-mono text-xs">Ph–N=N–O⁻</span>).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PART 3: ETHERS & EPOXIDES
+             ========================================== -->
+        <section id="part3-ethers" class="space-y-8">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold">Part 03 // Ethers & Oxiranes</span>
+                    <h2 class="text-2xl font-bold text-white mt-0.5">Ethers (R–O–R') & Epoxides: Synthesis & HI Cleavage Rules</h2>
+                </div>
+                <span class="badge-amber text-xs font-mono px-3 py-1 rounded-lg">Williamson • HI Decision Tree • Epoxides</span>
+            </div>
+
+            <!-- Williamson & Ether Prep -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="glass-card rounded-2xl p-5 space-y-4 border-t-2 border-t-amber-500">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-white text-base">Williamson Ether Synthesis</h3>
+                        <span class="badge-indigo text-xs font-mono px-2.5 py-0.5 rounded">Strict S<sub>N</sub>2</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-900 font-mono text-xs text-indigo-300 border border-slate-800">
+                        R–O⁻Na⁺ + R'–X → R–O–R' + NaX (R'–X MUST be 1° or CH₃–X)
+                    </div>
+                    <div class="space-y-2 text-sm recall-target">
+                        <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs">
+                            <strong>✅ CORRECT (To make <em>tert</em>-butyl methyl ether):</strong><br>
+                            <span class="font-mono">(CH₃)₃C–O⁻Na⁺ + CH₃Br → (CH₃)₃C–O–CH₃ + NaBr (S<sub>N</sub>2)</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs">
+                            <strong>❌ WRONG (3° Halide undergoes E2 Elimination!):</strong><br>
+                            <span class="font-mono">CH₃O⁻Na⁺ + (CH₃)₃C–Br → CH₂=C(CH₃)₂ (Isobutene) + CH₃OH + NaBr</span>
+                        </div>
+                        <p class="text-xs text-slate-400 pt-1"><strong>Alternative for hindered ethers:</strong> Use <strong>Alkoxymercuration-Demercuration</strong> (<span class="font-mono">Alkene + 1. Hg(OAc)₂, ROH / 2. NaBH₄</span>) → Markovnikov ether without elimination or rearrangement!</p>
+                    </div>
+                </div>
+
+                <!-- Epoxide Ring Opening -->
+                <div class="glass-card rounded-2xl p-5 space-y-4 border-t-2 border-t-indigo-500">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-white text-base">Unsymmetrical Epoxide Ring Opening</h3>
+                        <span class="badge-emerald text-xs font-mono px-2.5 py-0.5 rounded">Anti-Opening (Inversion)</span>
+                    </div>
+                    <div class="space-y-3 text-sm recall-target">
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-indigo-400 text-xs uppercase font-mono">1. Basic / Nucleophilic Medium (Pure S<sub>N</sub>2)</span>
+                                <span class="chem-code">RO⁻, OH⁻, RMgX, LiAlH₄, CN⁻</span>
+                            </div>
+                            <p class="text-xs text-slate-300 mt-2">Nucleophile attacks the <strong class="text-emerald-400">LESS sterically hindered carbon</strong> (1° > 2° > 3°) with Inversion.</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-amber-400 text-xs uppercase font-mono">2. Acidic Medium (Borderline S<sub>N</sub>2 / δ⁺ TS)</span>
+                                <span class="chem-code">H₂O/H⁺, ROH/H⁺, HX</span>
+                            </div>
+                            <p class="text-xs text-slate-300 mt-2">Nucleophile attacks the <strong class="text-amber-400">MORE substituted carbon (3°, Benzylic, Allylic)</strong> that best stabilizes the δ⁺ charge in the transition state (still proceeds with <strong>Inversion</strong>!).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The 4-Rule Ether + HX Cleavage Decision Tree -->
+            <div class="glass-card rounded-2xl p-6 border border-amber-500/30">
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-800">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Cleavage of Ethers with HX (HI > HBr > HCl): The 4-Rule JEE Decision Tree</h3>
+                        <p class="text-xs text-slate-400">Step 1 is ALWAYS fast protonation: <span class="font-mono text-amber-300">R–O–R' + HI → R–O⁺(H)–R' + I⁻</span></p>
+                    </div>
+                    <span class="badge-rose text-xs font-mono px-3 py-1 rounded-lg">#1 Most Asked JEE Topic</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+                    <div class="searchable-row p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="badge-indigo text-xs font-mono px-2.5 py-0.5 rounded">RULE 1: Both R & R' are 1° or 2° Alkyl</span>
+                            <span class="font-mono text-xs text-slate-400">S<sub>N</sub>2 Pathway</span>
+                        </div>
+                        <p class="text-sm text-slate-300 recall-target">Halide (<span class="font-mono">I⁻</span>) attacks the <strong class="text-emerald-400">LESS sterically hindered group</strong>:<br>
+                        <span class="chem-code mt-1.5 inline-block">CH₃–O–CH₂CH₃ + HI (1 eq, cold) → CH₃I + CH₃CH₂OH</span><br>
+                        <span class="text-xs text-slate-400 mt-1 block">*(If <strong>Excess Hot conc. HI</strong> is used: converts both to iodides → <span class="font-mono">CH₃I + CH₃CH₂I + H₂O</span>).*</span></p>
+                    </div>
+
+                    <div class="searchable-row p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="badge-amber text-xs font-mono px-2.5 py-0.5 rounded">RULE 2: One Group is 3°, Benzylic, or Allylic</span>
+                            <span class="font-mono text-xs text-slate-400">S<sub>N</sub>1 Pathway</span>
+                        </div>
+                        <p class="text-sm text-slate-300 recall-target">Cleaves to form the <strong class="text-amber-400">stable carbocation (3°, PhCH₂⁺)</strong>, so halide attaches to the <strong>3°/Benzylic group</strong>:<br>
+                        <span class="chem-code mt-1.5 inline-block">(CH₃)₃C–O–CH₃ + HI → (CH₃)₃C–I + CH₃OH</span><br>
+                        <span class="chem-code mt-1 inline-block">Ph–CH₂–O–CH₃ + HI → Ph–CH₂–I + CH₃OH</span></p>
+                    </div>
+
+                    <div class="searchable-row p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="badge-emerald text-xs font-mono px-2.5 py-0.5 rounded">RULE 3: Alkyl Aryl Ethers (Anisole Ph–O–R)</span>
+                            <span class="font-mono text-xs text-slate-400">sp² C–O Never Breaks</span>
+                        </div>
+                        <p class="text-sm text-slate-300 recall-target">The <span class="font-mono">Ph–O</span> bond has partial double-bond character. <strong class="text-emerald-400">ALWAYS gives Phenol + R–I</strong> (even with excess hot HI, Phenol never forms Ph–I!):<br>
+                        <span class="chem-code mt-1.5 inline-block">Ph–O–CH₃ + HI (even excess) → Ph–OH + CH₃I</span><br>
+                        <span class="text-xs text-rose-400 mt-1 block">*(Note: Diphenyl ether Ph–O–Ph does NOT cleave with HI at all!)*</span></p>
+                    </div>
+
+                    <div class="searchable-row p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="badge-rose text-xs font-mono px-2.5 py-0.5 rounded">RULE 4: Anisole Electrophilic Substitution</span>
+                            <span class="font-mono text-xs text-slate-400">–OCH₃ = o/p-Director</span>
+                        </div>
+                        <p class="text-sm text-slate-300 recall-target">• <span class="chem-code">Anisole + Br₂ in CH₃COOH</span> → <strong><em>p</em>-Bromoanisole (90% Major)</strong> (stops at monobromination, unlike Phenol!).<br>
+                        • Undergoes smooth Friedel-Crafts Alkylation/Acylation to give <strong>4-Methoxyacetophenone (Major)</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PART 4: ACIDITY & DISTINCTION TESTS
+             ========================================== -->
+        <section id="part4-tests" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-rose-400 font-semibold">Part 04 // Quick-Check Vault</span>
+                    <h2 class="text-2xl font-bold text-white mt-0.5">Master Acidity Order & NaHCO₃ / FeCl₃ Distinction Rules</h2>
+                </div>
+                <span class="badge-rose text-xs font-mono px-3 py-1 rounded-lg">pKa & Effervescence Rules</span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 space-y-5">
+                <div>
+                    <h3 class="text-xs font-mono uppercase text-slate-400 tracking-wider">Complete JEE Acidity Order (K<sub>a</sub>)</h3>
+                    <div class="mt-2 p-4 rounded-xl bg-slate-900/90 border border-indigo-500/30 font-mono text-xs sm:text-sm text-indigo-200 leading-relaxed recall-target">
+                        Picric Acid (2,4,6-Trinitrophenol) > R–COOH > <span class="text-amber-400 font-bold">H₂CO₃</span> > <em>p</em>-Nitrophenol > <em>o</em>-Nitrophenol > <em>m</em>-Nitrophenol > Phenol > <span class="text-emerald-400 font-bold">CH₃OH > H₂O</span> > 1° R–OH > 2° R–OH > 3° R–OH > HC≡CH
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="font-bold text-amber-400 font-mono text-xs uppercase">1. NaHCO₃ Test Rule</div>
+                        <p class="mt-2 text-slate-300 text-xs leading-relaxed recall-target">Liberates <span class="font-mono">CO₂↑</span> <strong>ONLY if stronger than H₂CO₃</strong>:<br>
+                        • <strong>R–COOH & Picric Acid / 2,4-DNP:</strong> Give brisk effervescence of CO₂ (carbon of CO₂ comes from NaH<strong>C</strong>O₃!).<br>
+                        • <strong>Phenol & Alcohols:</strong> NO reaction with NaHCO₃.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="font-bold text-emerald-400 font-mono text-xs uppercase">2. aq. NaOH Solubility</div>
+                        <p class="mt-2 text-slate-300 text-xs leading-relaxed recall-target">• <strong>Phenol:</strong> Dissolves in aq. NaOH to form PhONa (and is re-precipitated by bubbling CO₂ + H₂O!).<br>
+                        • <strong>Aliphatic Alcohols:</strong> Insoluble/do not react with NaOH (react only with active Na, K, NaH).</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="font-bold text-indigo-400 font-mono text-xs uppercase">3. Neutral FeCl₃ & Liebermann Test</div>
+                        <p class="mt-2 text-slate-300 text-xs leading-relaxed recall-target">• <strong>Neutral FeCl₃:</strong> Phenol gives <strong>Violet/Purple</strong> complex <span class="font-mono">[Fe(OPh)₆]³⁻</span>.<br>
+                        • <strong>Liebermann Nitroso Test:</strong> <span class="font-mono">NaNO₂ + conc. H₂SO₄ → H₂O → NaOH</span> gives <strong>Blue/Green → Red → Deep Blue</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PART 5: INTERACTIVE PATHWAY EXPLORER
+             ========================================== -->
+        <section id="interactive-hub" class="space-y-6 pb-12">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-3">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">Part 05 // Interactive Inspector</span>
+                    <h2 class="text-2xl font-bold text-white mt-0.5">Interactive Reaction & Reagent Pathway Explorer</h2>
+                </div>
+                <!-- Hub Tabs -->
+                <div class="flex space-x-2 bg-slate-900 p-1.5 rounded-xl border border-slate-800">
+                    <button onclick="switchHub('alcohols')" id="tab-alcohols" class="hub-tab px-4 py-1.5 rounded-lg text-xs font-mono font-bold bg-indigo-600 text-white transition">1. Alcohols Hub</button>
+                    <button onclick="switchHub('phenols')" id="tab-phenols" class="hub-tab px-4 py-1.5 rounded-lg text-xs font-mono font-bold text-slate-400 hover:text-white transition">2. Phenols Hub</button>
+                    <button onclick="switchHub('ethers')" id="tab-ethers" class="hub-tab px-4 py-1.5 rounded-lg text-xs font-mono font-bold text-slate-400 hover:text-white transition">3. Ethers & Epoxides Hub</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Left Pathway Nodes (7 cols) -->
+                <div class="lg:col-span-7 glass-card rounded-2xl p-5 space-y-3" id="pathwayList">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+                <!-- Right Inspector Card (5 cols) -->
+                <div class="lg:col-span-5 glass-card rounded-2xl p-6 border border-indigo-500/40 flex flex-col justify-between" id="inspectorPanel">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="badge-indigo text-xs font-mono px-2.5 py-1 rounded" id="insp-badge">SELECT A PATHWAY</span>
+                            <span class="text-xs font-mono text-slate-400" id="insp-mech">Mechanism</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white" id="insp-title">Click any transformation on the left</h3>
+                        <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800">
+                            <div class="text-[11px] font-mono uppercase text-slate-400">Exact Reagent & Conditions</div>
+                            <div class="text-sm font-mono text-indigo-300 mt-1 font-semibold" id="insp-reagent">—</div>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <div class="text-[11px] font-mono uppercase text-emerald-400">Product & Stereochemistry</div>
+                            <div class="text-sm text-slate-200 mt-1" id="insp-stereo">—</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30">
+                            <div class="text-xs font-mono uppercase text-amber-400 font-bold">⚠️ JEE PYQ Trap & Edge Case</div>
+                            <div class="text-sm text-slate-200 mt-1.5 leading-relaxed" id="insp-trap">—</div>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-500 font-mono">
+                        <span>JEE ORGANIC VAULT // DARK GLASS THEME</span>
+                        <span>ACTIVE RECALL READY</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Active Recall Toggle
+        let recallEnabled = false;
+        function toggleActiveRecall() {
+            recallEnabled = !recallEnabled;
+            const container = document.getElementById('mainContainer');
+            const dot = document.getElementById('recallDot');
+            const btn = document.getElementById('toggleRecallBtn');
+
+            if (recallEnabled) {
+                container.classList.add('recall-active');
+                dot.classList.remove('bg-slate-500');
+                dot.classList.add('bg-emerald-400', 'animate-pulse');
+                btn.classList.add('border-emerald-500/50', 'text-emerald-300');
+                // Reset previously revealed cells
+                document.querySelectorAll('.recall-target.revealed').forEach(el => el.classList.remove('revealed'));
+            } else {
+                container.classList.remove('recall-active');
+                dot.classList.remove('bg-emerald-400', 'animate-pulse');
+                dot.classList.add('bg-slate-500');
+                btn.classList.remove('border-emerald-500/50', 'text-emerald-300');
+            }
+        }
+
+        // Click to reveal individual blurred cell in Active Recall mode
+        document.addEventListener('click', function(e) {
+            if (!recallEnabled) return;
+            const target = e.target.closest('.recall-target');
+            if (target) {
+                target.classList.toggle('revealed');
+            }
+        });
+
+        // Live Reagent Search Filter
+        document.getElementById('reagentSearch').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            document.querySelectorAll('.searchable-row').forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(query) ? '' : 'none';
+            });
+        });
+
+        // Interactive Hub Data
+        const hubData = {
+            alcohols: [
+                {
+                    title: "Alkene → Markovnikov Alcohol (OMDM vs Acid)",
+                    badge: "ADDITION",
+                    mech: "Cyclic Mercurinium vs Carbocation",
+                    reagent: "1. Hg(OAc)₂, H₂O/THF  2. NaBH₄, OH⁻",
+                    stereo: "Markovnikov Alcohol • Anti-addition • ZERO Rearrangement",
+                    trap: "Acid-catalyzed hydration (dil. H₂SO₄) forms a carbocation and undergoes 1,2-hydride/methyl/ring-expansion shifts. OMDM never rearranges! Also: H₂O supplies –OH and NaBH₄ supplies –H."
+                },
+                {
+                    title: "Alkene → Anti-Markovnikov Alcohol (HBO)",
+                    badge: "SYN-ADDITION",
+                    mech: "Concerted 4-Membered Cyclic TS",
+                    reagent: "1. BH₃·THF  2. H₂O₂, aq. OH⁻",
+                    stereo: "Anti-Markovnikov Alcohol • Syn-addition • ZERO Rearrangement",
+                    trap: "Both –H (from BH₃) and –OH (from H₂O₂) add to the SAME face (Syn) of the double bond."
+                },
+                {
+                    title: "Chiral Alcohol → Alkyl Chloride (SOCl₂ vs Darzen)",
+                    badge: "SUBSTITUTION",
+                    mech: "SNi (Retention) vs SN2 (Inversion)",
+                    reagent: "SOCl₂ alone vs SOCl₂ + Pyridine",
+                    stereo: "SOCl₂ alone → Retention (SNi) | SOCl₂ + Pyridine → Inversion (SN2)",
+                    trap: "Pyridine reacts with HCl to generate free Cl⁻ ion which attacks from the backside (Inversion). Without pyridine, intimate ion pair collapses with retention!"
+                },
+                {
+                    title: "Alcohol → Carbonyl / Alkene (Cu at 573 K)",
+                    badge: "OXIDATION / ELIMINATION",
+                    mech: "Dehydrogenation (1°/2°) vs Dehydration (3°)",
+                    reagent: "Red hot Cu or Ag powder at 573 K (300°C)",
+                    stereo: "1° → Aldehyde + H₂ | 2° → Ketone + H₂ | 3° → Alkene + H₂O",
+                    trap: "3° Alcohols DO NOT oxidize over heated Cu; they undergo E1 dehydration to give the Saytzeff Alkene!"
+                },
+                {
+                    title: "1,2-Diol (Pinacol) → Pinacolone",
+                    badge: "REARRANGEMENT",
+                    mech: "Carbocation + 1,2-Shift",
+                    reagent: "conc. H₂SO₄, Δ",
+                    stereo: "Ketone via migration to most stable carbocation",
+                    trap: "Step 1 forms the MOST stable carbocation (e.g. Ph₂C⁺ over Me₂C⁺). Migratory aptitude: –H > –Aryl (EDG) > –Ph > –Aryl (EWG) > 3° > 2° > 1° > –Me."
+                }
+            ],
+            phenols: [
+                {
+                    title: "Cumene → Phenol + Acetone",
+                    badge: "INDUSTRIAL PREP",
+                    mech: "Free Radical Peroxidation + 1,2-Phenyl Shift",
+                    reagent: "1. O₂ (Air)  2. dil. H₂SO₄, Δ",
+                    stereo: "Phenol + Acetone (CH₃COCH₃) via Cumene Hydroperoxide",
+                    trap: "In step 2, protonation of terminal –OH causes loss of H₂O and a concerted 1,2-phenyl shift to electron-deficient oxygen!"
+                },
+                {
+                    title: "Phenol → Salicylaldehyde (Reimer–Tiemann)",
+                    badge: "NAMED RXN",
+                    mech: "Electrophilic Substitution via Carbene",
+                    reagent: "1. CHCl₃ + aq. NaOH (340 K)  2. H₃O⁺",
+                    stereo: "o-Hydroxybenzaldehyde (Major) + p-isomer (Minor)",
+                    trap: "Electrophile is neutral Dichlorocarbene (:CCl₂, 6 valence e⁻). Using CCl₄ + NaOH gives Salicylic Acid instead!"
+                },
+                {
+                    title: "Phenol → Salicylic Acid (Kolbe–Schmitt)",
+                    badge: "NAMED RXN",
+                    mech: "Carboxylation of Phenoxide",
+                    reagent: "1. NaOH  2. CO₂ (400 K, 4–7 atm)  3. H₃O⁺",
+                    stereo: "o-Hydroxybenzoic acid (Major with NaOH)",
+                    trap: "Electrophile is weak CO₂. If KOH is used instead of NaOH, the para-isomer becomes major because larger K⁺ cannot chelate at the ortho position!"
+                },
+                {
+                    title: "Phenol → Bromophenols (H₂O vs CS₂)",
+                    badge: "HALOGENATION",
+                    mech: "Electrophilic Aromatic Substitution",
+                    reagent: "Br₂ + H₂O vs Br₂ in CS₂ (273 K)",
+                    stereo: "Br₂/H₂O → 2,4,6-Tribromophenol (white ppt) | Br₂/CS₂ → p-Bromophenol",
+                    trap: "Salicylic acid or 4-hydroxybenzenesulphonic acid + Br₂/H₂O undergoes ipso-decarboxylation/desulphonation to STILL give 2,4,6-tribromophenol!"
+                }
+            ],
+            ethers: [
+                {
+                    title: "Williamson Synthesis (1° vs 3° Halide)",
+                    badge: "SYNTHESIS",
+                    mech: "Strict SN2 vs E2 Elimination",
+                    reagent: "R–ONa + R'–X",
+                    stereo: "Inversion at R'–X (Requires 1° or CH₃ Halide)",
+                    trap: "If R'–X is 3° (e.g., Me₃C–Br + CH₃ONa), alkoxide acts as a strong base and triggers E2 elimination to give Isobutene!"
+                },
+                {
+                    title: "Unsymmetrical 1°/2° Ether + HI",
+                    badge: "CLEAVAGE RULE 1",
+                    mech: "SN2 Attack on Protonated Ether",
+                    reagent: "HI (1 eq, cold) vs Excess Hot HI",
+                    stereo: "I⁻ attacks the LESS sterically hindered carbon",
+                    trap: "CH₃–O–CH₂CH₃ + 1 eq HI → CH₃I + CH₃CH₂OH. With excess hot HI, both become iodides (CH₃I + CH₃CH₂I)."
+                },
+                {
+                    title: "tert-Butyl or Benzylic Ether + HI",
+                    badge: "CLEAVAGE RULE 2",
+                    mech: "SN1 via Stable Carbocation",
+                    reagent: "HI (conc.)",
+                    stereo: "I⁻ attaches to the 3° or Benzylic group!",
+                    trap: "(CH₃)₃C–O–CH₃ + HI → (CH₃)₃C–I + CH₃OH because (CH₃)₃C⁺ carbocation is extremely stable!"
+                },
+                {
+                    title: "Anisole (Ph–O–CH₃) + HI",
+                    badge: "CLEAVAGE RULE 3",
+                    mech: "SN2 at Methyl Carbon Only",
+                    reagent: "HI (even in excess / hot)",
+                    stereo: "ALWAYS gives Phenol (Ph–OH) + CH₃I",
+                    trap: "The sp² Ph–O bond has partial double-bond character and NEVER breaks! Phenol never converts to iodobenzene."
+                },
+                {
+                    title: "Unsymmetrical Epoxide Ring Opening",
+                    badge: "EPOXIDE OPENING",
+                    mech: "Basic (SN2) vs Acidic (Borderline SN2)",
+                    reagent: "Basic (RO⁻, RMgX) vs Acidic (H⁺ / ROH)",
+                    stereo: "Anti-opening (Inversion) in BOTH cases",
+                    trap: "Basic nucleophiles attack the LESS hindered carbon (1°). Acidic nucleophiles (ROH/H⁺) attack the MORE substituted 3°/benzylic carbon bearing δ⁺ charge!"
+                }
+            ]
+        };
+
+        let currentHub = 'alcohols';
+
+        function switchHub(hubName) {
+            currentHub = hubName;
+            document.querySelectorAll('.hub-tab').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('text-slate-400');
+            });
+            const activeTab = document.getElementById('tab-' + hubName);
+            activeTab.classList.add('bg-indigo-600', 'text-white');
+            activeTab.classList.remove('text-slate-400');
+
+            const listEl = document.getElementById('pathwayList');
+            listEl.innerHTML = '';
+
+            hubData[hubName].forEach((item, index) => {
+                const btn = document.createElement('div');
+                btn.className = "p-4 rounded-xl bg-slate-900/70 hover:bg-indigo-600/15 border border-slate-800 hover:border-indigo-500/40 cursor-pointer transition flex items-center justify-between group";
+                btn.onclick = () => selectPathway(index);
+                btn.innerHTML = `
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded badge-indigo">${item.badge}</span>
+                            <span class="text-xs font-mono text-slate-400">${item.mech}</span>
+                        </div>
+                        <div class="font-bold text-white text-sm mt-1.5 group-hover:text-indigo-300 transition">${item.title}</div>
+                    </div>
+                    <span class="text-slate-500 group-hover:text-indigo-400 font-mono text-lg">→</span>
+                `;
+                listEl.appendChild(btn);
+            });
+
+            selectPathway(0);
+        }
+
+        function selectPathway(index) {
+            const item = hubData[currentHub][index];
+            document.getElementById('insp-badge').innerText = item.badge;
+            document.getElementById('insp-mech').innerText = item.mech;
+            document.getElementById('insp-title').innerText = item.title;
+            document.getElementById('insp-reagent').innerText = item.reagent;
+            document.getElementById('insp-stereo').innerText = item.stereo;
+            document.getElementById('insp-trap').innerText = item.trap;
+        }
+
+        // Initialize default hub
+        switchHub('alcohols');
+    </script>
 </body>
 </html>
